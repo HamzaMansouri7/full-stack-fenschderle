@@ -32,3 +32,4 @@ export class PizzaEntity {
     @JoinColumn({ name: "pizzatypeid" })
     pizzaTypeId: number;
 }
+// should changes here 
