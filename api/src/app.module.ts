@@ -1,19 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PizzaModule } from './pizza/pizza.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    PizzaModule,
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'root',
-      password: 'root',
-      database: 'test',
+      username:'postgres',
+      password: 'postgres',
+      database:'api',
+      autoLoadEntities: true,
       synchronize: true,
     }),
   ],
