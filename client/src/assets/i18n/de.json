@@ -62,10 +62,41 @@
             },
             "span3":{
                 "title1":"Ihre Momente" 
-            },
-            "p":{
-                "title1":"zurreck"
-            }
-       
+            } ,
 
+            "p11" : {
+                "title1":"Speisekarte"
+            },
+       "font-weight-bold":{
+        "title":"gesamt"
+       },
+       "qte":{
+        "title":"Menge"
+       },
+       "footer1":{
+        "title":"Öffnungszeiten" 
+
+          },
+          "footer2":{
+            "title":"Folgen Sie uns"
+          },
+          "footer3":{
+            "title":"Reservierungen"
+          },
+          "contact1":{
+           "title":"Kontakt"
+          },
+          "contact2":{
+            "title":"Unsere Adresse"
+           },
+           "contact3":{
+            "title":"Schreiben Sie uns eine E-Mail"
+           },
+           "contact4":{
+            "title":"Rufen Sie uns an"
+           },
+           "contact5":{
+            "title":"Öffnungszeiten"
+           }
 }
+

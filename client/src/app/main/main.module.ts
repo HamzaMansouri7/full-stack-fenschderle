@@ -15,6 +15,9 @@ import { BookTableComponent } from './book-table/book-table.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductCardComponent } from './menu/product-card/product-card.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
@@ -30,12 +33,15 @@ import { ProductCardComponent } from './menu/product-card/product-card.component
     GalleryComponent,
     ContactComponent,
     ProductCardComponent,
-    MenuComponent
+    MenuComponent,
+    OrderComponent
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    BrowserModule
   ],
   exports:[HomeComponent,
     AboutUsComponent,ContactComponent,GalleryComponent,ContactComponent,
@@ -43,6 +49,6 @@ import { ProductCardComponent } from './menu/product-card/product-card.component
     TestimonialsComponent,
     EventsComponent,
     ChefsComponent,MenuComponent,
-    StatsCounterComponent,TestimonialsComponent,EventsComponent,BookTableComponent,ProductCardComponent]
+    StatsCounterComponent,TestimonialsComponent,EventsComponent,BookTableComponent,ProductCardComponent,OrderComponent]
 })
 export class MainModule { }

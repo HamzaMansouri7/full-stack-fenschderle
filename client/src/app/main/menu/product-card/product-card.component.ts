@@ -8,21 +8,21 @@ import { Product } from '../../interfaces';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent  {
-
   @Input() products:any
   // photoList: PhotoList=new PhotoList();
   photoLength: number;
   tabImages=[]
   productArray: any;
   itemNumber: number;
-  cart:any
-  qte: number = 1
-  oldQte:number
+  cart:any;
+  qte: number = 1;
+  oldQte:number;
+  price:number;
   constructor(private modalService: NgbModal
               // private cartService:CartService,
               // private sharedService:SharedService
               ){}
-
+                  
   ngOnChanges() {
     // this.products?.pictures?.forEach(element => {
     //   this.tabImages.push(element.url)
@@ -35,24 +35,25 @@ export class ProductCardComponent  {
     //   this.photoList.imgObject = [{active : false , img : this.photoList.photos[Math.abs(0 % this.photoLength)]}]
     //   this.photoList.imgObject[0].active = true
     // }
+    this.calculprice();
   }
   fullSceenAction(content: any,products:Product) {
     this.modalService.open(content, { size: 'lg',centered: true});
-    // this.getOldData()
-    // // this.verifOldQuantity(products);
-    // this.qte=1
+    this.getOldData()
+    //this.verifOldQuantity(products);
+    this.qte=1
   }
 
-  // verifOldQuantity(products) {
-  //   if (this.productArray.length>0) {
-  //     this.productArray.forEach(element => {
-  //         if(element.id==products.id){
-  //           this.oldQte=element.quantity
+  verifOldQuantity(products:any) {
+    if (this.productArray.length>0) {
+      this.productArray.forEach((element:any) => {
+          if(element.id==products.id){
+            this.oldQte=element.quantity
 
-  //         }
-  //     });
-  //   }
-  // }
+          }
+      });
+    }
+  }
 
 
   sendToCart() {
@@ -76,21 +77,26 @@ export class ProductCardComponent  {
     }
 
   }
-  // getOldData(){
-  //   this.productArray = this.cartService.getProductCart()
-  //   if (this.productArray?.length < 1) {
-  //     let cookie: any
-  //     cookie = this.sharedService.getAllCookies()
-  //     Object.entries(cookie).forEach(([key, val]) => {
-  //       var element = JSON.stringify(val);
-  //       if (element.length > 1000) {
-  //         var parsed = JSON.parse(JSON.parse(element));
-  //         this.productArray.push(parsed)
-  //       }
-  //     }
-  //     );
-  //   }
-  //   this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
-  // }
+  getOldData(){
+    // this.productArray = this.cartService.getProductCart()
+    // if (this.productArray?.length < 1) {
+    //   let cookie: any
+    //   cookie = this.sharedService.getAllCookies()
+    //   Object.entries(cookie).forEach(([key, val]) => {
+    //     var element = JSON.stringify(val);
+    //     if (element.length > 1000) {
+    //       var parsed = JSON.parse(JSON.parse(element));
+    //       this.productArray.push(parsed)
+    //     }
+    //   }
+    //   );
+    // }
+    // this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
+  }
+
+  calculprice(){
+    this.price= this.products.price * this.qte 
+     console.log( this.price,'price');
+  }
 
 }

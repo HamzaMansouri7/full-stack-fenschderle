@@ -64,8 +64,38 @@
         "span3":{
             "title1":"Your Moments" 
         },
-        " p":{
+        " p11":{
             "title1":" Back to menu"
-        } 
-       
+        } ,
+        "font-weight-bold":{
+            "title":"total"
+           },
+           "qte":{
+            "title":"Quantity"
+           },
+           "footer1":{
+            "title":"Opening Hours" 
+              },
+              "footer2":{
+                "title":"Follow Us"
+              },
+              "footer3":{
+                "title":"Reservations"
+              },
+              "contact1":{
+                "title":"Contact"
+               },
+               "contact2":{
+                "title":"Our Address"
+               },
+               "contact3":{
+                "title":"Email Us"
+               },
+               "contact4":{
+                "title":"Call Us"
+               },
+               "contact5":{
+                "title":"Opening Hours"
+               }
+
 }

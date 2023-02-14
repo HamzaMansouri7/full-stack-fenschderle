@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,31 +11,43 @@ import { UIState } from 'src/state/ui.state';
 import { environment } from 'src/environments/environment';
 import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeFr);
+import localeFr from '@angular/common/locales/fr';
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    CoreModule,
-    MainModule,
-    NgxsModule.forRoot([UIState], {developmentMode: !environment.production}),
-    // NgxsStoragePluginModule.forRoot(),
-    // NgxsLoggerPluginModule.forRoot({disabled: true || environment.production}),
-    // NgxsReduxDevtoolsPluginModule.forRoot(),
-    TranslateModule.forRoot({
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+   
+    providers: [{
+        provide: LOCALE_ID,
+        useValue: 'fr-FR' // 'de-DE' for Germany, 'fr-FR' for France ...
+        },
+    ],
+    
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        CoreModule,
+        MainModule,
+        NgxsModule.forRoot([UIState], { developmentMode: !environment.production }),
+        // NgxsStoragePluginModule.forRoot(),
+        // NgxsLoggerPluginModule.forRoot({disabled: true || environment.production}),
+        // NgxsReduxDevtoolsPluginModule.forRoot(),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        
+    ]
 })
 export class AppModule { }
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {

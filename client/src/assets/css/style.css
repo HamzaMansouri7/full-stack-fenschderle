@@ -380,8 +380,12 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #000;
+     color: #000; 
   }
+  .navbar a:link {
+    text-decoration: none; 
+  }
+    
 
   .navbar .dropdown ul {
     display: block;

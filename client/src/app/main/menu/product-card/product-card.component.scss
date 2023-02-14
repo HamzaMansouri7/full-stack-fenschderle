@@ -7,8 +7,8 @@
 }
 
 .iput-style{
-    width: 102px;
-    height: 38px;
+    max-width: 150px;
+    height: 40px;
 }
   .value-button {
     border: 2px solid #ddd;
@@ -59,9 +59,10 @@
     width: 100%;
     text-align: center; 
 }
-.h6 font-weight-bold text-center{
-  font-size:  2.5em;
-  color: rgb(10, 9, 9);
+.h6 {
+  color: green;
+  display: flex;
+  justify-content: center;
 }
 .purchase-title{
   margin-left: 25%;
@@ -69,6 +70,21 @@
   font-size: 2em;
 }
 
+.h7{
+  color:green;
+  display: flex;
+ margin-left: 297px;
+ margin-top: 30px;
+}
+.menge{
+  margin-top: 80px;
+}
+.btn {
+  background-color: #f6ca67;
+}
+.iput-style{
+ margin-left: 78px;
+}
 
 
 
