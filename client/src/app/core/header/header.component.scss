@@ -1,0 +1,29 @@
+.page-break{
+    white-space: pre-line
+}
+.selected{
+    position: relative;
+    
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    &::after{
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            top: 58%;
+            background-color:#49b4e7;
+    }
+}
+.flags {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: inline-flex;
+}
+.order{
+    margin-top: 14px;
+}

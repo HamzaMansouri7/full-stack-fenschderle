@@ -1,0 +1,102 @@
+{
+    "common":{
+        "order":{
+            "book_table":"Tisch reservieren"
+        }
+    },
+
+    "demo": {
+        "title": "Title en englais",
+        "text": "This is a simple demonstration app for ngx-translate"
+    },
+
+    "hero":{
+        "title":"Genießen Sie Ihr gesundes \n leckeres Essen",
+        "subtitle" :"Bei einer gesunden Ernährung ist Vielfalt das Wichtigste. Mit dem richtigen Mix aus Getreideprodukten und Kartoffeln, Milchprodukten und Fisch, Fleisch, Wurst, Gemüse und Obst gelingt eine ausgewogene Ernährung auch im Alltag ganz einfach."
+    },
+    "about":{
+        "title":"Über uns",
+        "subtitle":"Gesund kochen – fit in den Tag starten ",
+        "paragh1":"fenschderle ist eine Brasserie",
+        "paragh2":"Duis aute irure dolor in reprehenderit in voluptate velit.2/2",
+        "paragh3":"Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.3/3 ",
+        "paragh4":"Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.4/4 ",
+        "paragh5":"Buchen Sie zum Tisch"
+    },
+    "Testimonials":{
+        "title":"REFERENZEN",
+        "title2":"Was sagen sie",
+        "title3":"über uns"
+    },
+    "events":{
+        "title":"Veranstaltungen"
+    },
+    "contact":{
+        "title1":"Hier finden",
+        "title2":"Sie uns:"
+    },
+    "cart":{
+        "title":"kaufen"
+       },
+       "detail":{
+        "title1":"Angebotsdetails"
+        },
+        "h2":{
+            "title1":"Unser Menü"
+            },
+            "p":{
+                "title1":"Überprüfen Sie unsere" 
+            },
+            "span":{
+                "title1":"Fenschderle Menu" 
+            },
+            "p1":{
+                "title1":"Schauen Sie " 
+            },
+            "span1":{
+                "title1":"in unsere Galerie" 
+            } ,
+            "p2":{
+                "title1":"Teilen",
+                "title2":"In unserem Restaurant" 
+            },
+            "span3":{
+                "title1":"Ihre Momente" 
+            } ,
+
+            "p11" : {
+                "title1":"Speisekarte"
+            },
+       "font-weight-bold":{
+        "title":"gesamt"
+       },
+       "qte":{
+        "title":"Menge"
+       },
+       "footer1":{
+        "title":"Öffnungszeiten" 
+
+          },
+          "footer2":{
+            "title":"Folgen Sie uns"
+          },
+          "footer3":{
+            "title":"Reservierungen"
+          },
+          "contact1":{
+           "title":"Kontakt"
+          },
+          "contact2":{
+            "title":"Unsere Adresse"
+           },
+           "contact3":{
+            "title":"Schreiben Sie uns eine E-Mail"
+           },
+           "contact4":{
+            "title":"Rufen Sie uns an"
+           },
+           "contact5":{
+            "title":"Öffnungszeiten"
+           }
+}
+
