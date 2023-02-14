@@ -1,0 +1,31 @@
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex">
+         <a href="http://Fenschderle.com/" class="logo d-flex align-items-center me-auto me-lg-0">
+            <h1>Fenschderle<span>.</span></h1>
+         </a>
+         <div class="flags"
+              *ngIf="(language$ | async) as curLanguage">
+           <a *ngFor="let language of ['de','en']"
+              [class.selected]="language === curLanguage"
+              (click)=" changeLanguage(language)">
+              <img [src]="'assets/img/translation/' + language + '.webp'"
+                 [alt]="language">
+               </a>
+         </div>
+         <nav id="navbar" class="navbar">
+            <ul>
+               <li><a href="#hero">Home</a></li>
+               <li><a href="#menu">Menu</a></li>
+               <li><a href="#events">Events</a></li>
+               <li><a href="#book-a-table">bouk-table</a></li>
+               <li><a href="#gallery">Gallery</a></li>
+               <li><a href="#contact">Contact</a></li>
+               <li><a href="#Order">Order</a></li>
+            </ul>
+         </nav>
+      </div>
+       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header>
+  <!-- tets -->

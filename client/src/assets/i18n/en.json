@@ -1,0 +1,101 @@
+{
+    "common":{
+        "order":{
+            "book_table":"Book a Table"
+        }
+    },
+
+    "demo": {
+        "title": "Title en englais",
+        "text": "This is a simple demonstration app for ngx-translate"
+    },
+
+    "hero":{
+        "title":"Enjoy Your Healthy \n Delicious Food",
+        "subtitle" :"When it comes to a healthy diet, variety is key. With the right mix of grain products and potatoes, dairy products and fish, meat, sausage, vegetables and fruit, a balanced diet is easy to achieve even in everyday life."
+    },
+    "about":{
+      "title": "About Us",
+      "subtitle" :"Cook healthy – start the day fit",
+      "paragh1":"fenschderle  is a brasserie ",
+      "paragh2":"Duis aute irure dolor in reprehenderit in voluptate velit.2 ",
+      "paragh3":"Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.3 ",
+      "paragh4":"Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.4 ",
+      "paragh5":"Book a Table"
+    },
+    "Testimonials":{
+        "title":"Testimonials ",
+        "title2":"What Are They",
+        "title3":"Saying About Us"
+
+    } ,
+    "events":{
+         "title": "events"
+     },
+     "contact":{
+        "title1":"Need Help? ",
+        "title2":"Contact Us:"
+    },
+    "cart":{
+     "title":"shop"
+    },
+    "detail":{
+    "title1":"Offer details"
+    },
+    "h2":{
+        "title1":"Our Menu"
+        },
+        "p":{
+            "title1":"Check Our" 
+        },
+        "span":{
+            "title1":"Fenschderle Menu" 
+        },  
+        "p1":{
+            "title1":"Check Our" 
+        },
+        "span1":{
+            "title1":"Fenschderle Galerie" 
+        },
+        "p2":{
+            "title1":"Share",
+            "title2":"In Our Restaurant "
+        },
+        "span3":{
+            "title1":"Your Moments" 
+        },
+        " p11":{
+            "title1":" Back to menu"
+        } ,
+        "font-weight-bold":{
+            "title":"total"
+           },
+           "qte":{
+            "title":"Quantity"
+           },
+           "footer1":{
+            "title":"Opening Hours" 
+              },
+              "footer2":{
+                "title":"Follow Us"
+              },
+              "footer3":{
+                "title":"Reservations"
+              },
+              "contact1":{
+                "title":"Contact"
+               },
+               "contact2":{
+                "title":"Our Address"
+               },
+               "contact3":{
+                "title":"Email Us"
+               },
+               "contact4":{
+                "title":"Call Us"
+               },
+               "contact5":{
+                "title":"Opening Hours"
+               }
+
+}
