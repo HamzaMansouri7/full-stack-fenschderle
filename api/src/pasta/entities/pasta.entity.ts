@@ -1,7 +1,11 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+<<<<<<< HEAD
 @Entity("pizza")
+=======
+@Entity()
+>>>>>>> create-order-entity
 export class Pasta {
   
   @ApiProperty()
@@ -9,6 +13,7 @@ export class Pasta {
   id: number;
 
   @ApiProperty()
+<<<<<<< HEAD
   @Column("text", { name: "reference", nullable: true})
   reference: string | null;
 
@@ -19,6 +24,10 @@ export class Pasta {
   @ApiProperty()
   @Column("double precision", { name: "timbrePrice", nullable: true, default: 0 })
   timbrePrice: number | null;
+=======
+  @Column("text", { name: "name", nullable: true})
+  name: string | null;
+>>>>>>> create-order-entity
 
   @ApiProperty()
   @Column("text", { name: "description", nullable: true })
@@ -26,15 +35,24 @@ export class Pasta {
 
   @ApiProperty()
   @Column("double precision", { name: "totalprice", nullable: true, default: 0 })
+<<<<<<< HEAD
   totalPrice: number | null;
+=======
+  price: number | null;
+>>>>>>> create-order-entity
 
   @ApiProperty()
   @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
   globalDiscount: number | null;
 
   @ApiProperty()
+<<<<<<< HEAD
   @Column("boolean", { name: "iscompleted", nullable: true, default: false })
   isCompleted: boolean | null;
+=======
+  @Column("boolean", { name: "isdeleted", nullable: true, default: false })
+  isDeleted: boolean | null;
+>>>>>>> create-order-entity
 
   @ApiProperty()
   @Column("timestamp with time zone", { name: "createdat", nullable: true })
@@ -52,8 +70,11 @@ export class Pasta {
   @Column("integer", { name: "updatedby", nullable: true })
   updatedBy: number | null;
 
+<<<<<<< HEAD
   @ApiProperty()
   @Column("boolean", { name: "active", nullable: true, default: true })
   active: boolean | null;
+=======
+>>>>>>> create-order-entity
 
 }
