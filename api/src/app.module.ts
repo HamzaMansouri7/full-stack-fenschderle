@@ -2,6 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PastaModule } from './pasta/pasta.module';
+<<<<<<< HEAD
+
+@Module({
+  imports: [ PastaModule],
+=======
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { PizzaModule } from './pizza/pizza.module';
@@ -34,6 +39,7 @@ import { PayementModule } from './payement/payement.module';
     SalatModule,
     OrderModule,
     PayementModule],
+>>>>>>> create-order-entity
   controllers: [AppController],
   providers: [AppService],
 })
