@@ -1,42 +1,58 @@
-// import { Pasta } from "src/pasta/entities/pasta.entity";
-// import { Pizza } from "src/pizza/entities/pizza.entity";
-// import { Salat } from "src/salat/entities/salat.entity";
-// import { Schnitzel } from "src/schnitzel/entities/schnitzel.entity";
-// import { Snack } from "src/snacks/entities/snack.entity";
+ import { ApiProperty } from "@nestjs/swagger";
+import { Pasta } from "src/pasta/entities/pasta.entity";
+ import { Pizza } from "src/pizza/entities/pizza.entity";
+ import { Salat } from "src/salat/entities/salat.entity";
+ import { Schnitzel } from "src/schnitzel/entities/schnitzel.entity";
+ import { Snack } from "src/snacks/entities/snack.entity";
 
-// export class CreateOrderDto {
+ export class CreateOrderDto {
     
+    @ApiProperty()
+   customerName: string;
  
-//   customerName: string;
- 
 
+   @ApiProperty()
+   customerAddress: string;
 
-//   customerAddress: string;
+   @ApiProperty()
+   totalPrice: number;
 
- 
-//   totalPrice: number;
+   @ApiProperty()
+  isDelivered: boolean;
 
+  @ApiProperty()
+   paymentState: string;
+   @ApiProperty()
+   quantity : number;
 
-//   isDelivered: boolean;
+   @ApiProperty()
+   pasta: Pasta;
 
+   @ApiProperty()
+   pizza: Pizza;
 
-//   paymentState: string;
+   @ApiProperty()
+   snack: Snack;
 
-//   quantity : number;
+   @ApiProperty()
+   salad: Salat;
 
+   @ApiProperty()
+   schnitzel: Schnitzel;
+     payments: any;
+     
+    @ApiProperty()
+    isDeleted?: number;
 
-//   pasta: Pasta;
+    @ApiProperty()
+    createdAt?: Date;
 
-  
-//   pizza: Pizza;
+    @ApiProperty()
+    createdBy?: number;
 
- 
-//   snack: Snack;
+    @ApiProperty()
+    updatedAt?: Date;
 
-  
-//   salad: Salat;
-
- 
-//   schnitzel: Schnitzel;
-//     payments: any;
-// }
+    @ApiProperty()
+    updatedBy?: number;
+ }
