@@ -2,11 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PastaModule } from './pasta/pasta.module';
-<<<<<<< HEAD
-
-@Module({
-  imports: [ PastaModule],
-=======
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { PizzaModule } from './pizza/pizza.module';
@@ -15,6 +10,9 @@ import { SnacksModule } from './snacks/snacks.module';
 import { SalatModule } from './salat/salat.module';
 import { OrderModule } from './order/order.module';
 import { PayementModule } from './payement/payement.module';
+import { SizeModule } from './size/size.module';
+import { ExtraModule } from './extra/extra.module';
+import { PaiementModule } from './paiement/paiement.module';
 
 
 @Module({
@@ -38,8 +36,10 @@ import { PayementModule } from './payement/payement.module';
     SnacksModule,
     SalatModule,
     OrderModule,
-    PayementModule],
->>>>>>> create-order-entity
+    PayementModule,
+    SizeModule,
+    ExtraModule,
+    PaiementModule],
   controllers: [AppController],
   providers: [AppService],
 })

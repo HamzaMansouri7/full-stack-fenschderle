@@ -26,7 +26,7 @@ import { Pasta } from "src/pasta/entities/pasta.entity";
   totalprice: number | null;
 
   @ApiProperty()
-  @Column("double precision", { name: "paymentState", nullable: true, default:'pending'  })
+  @Column("text", { name: "paymentState", nullable: true, default:'pending'  })
   paymentState: string | null;
   
   @ApiProperty()
@@ -58,21 +58,21 @@ import { Pasta } from "src/pasta/entities/pasta.entity";
     @Column("integer", { name: "updatedby", nullable: true })
     updatedBy: number | null;
 
-    @ApiProperty()
-    @ManyToOne(type => Pasta)
-    pasta: Pasta;
+   // @ApiProperty()
+   // @ManyToOne(type => Pasta)
+   // pasta: Pasta;
   
-     @ApiProperty()
-     @ManyToOne(type => Pizza)
-     pizza: Pizza;
+     //@ApiProperty()
+     //@ManyToOne(type => Pizza)
+    // pizza: Pizza;
   
-     @ManyToOne(type => Snack)
-     snack: Snack;
+    // @ManyToOne(type => Snack)
+    // snack: Snack;
   
-     @ApiProperty()
-     @ManyToOne(type => Salat)
-     salad: Salat;
+     //@ApiProperty()
+     //@ManyToOne(type => Salat)
+     //salad: Salat;
   
-     @ApiProperty()
-     @ManyToOne(type => Schnitzel) schnitzel: Schnitzel;  payments: any;
+     //@ApiProperty()
+    // @ManyToOne(type => Schnitzel) schnitzel: Schnitzel;  payments: any;
  }

@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { ApiProperty } from '@nestjs/swagger';
-import { CreatePayementDto } from './create-payement.dto';
+import { CreatePayementDto } from './create-paiement.dto';
 
 export class UpdatePayementDto extends PartialType(CreatePayementDto) {
     @ApiProperty()
@@ -37,3 +37,4 @@ export class UpdatePayementDto extends PartialType(CreatePayementDto) {
     updatedBy?: number;
   
 }
+
