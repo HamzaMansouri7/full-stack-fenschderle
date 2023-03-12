@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Pizza {
 
@@ -39,16 +39,14 @@ export class Pizza {
     @Column("integer", { name: "updatedby", nullable: true })
     updatedBy: number | null;
 
-    // @ManyToOne()
-    // @Column("integer", { name: "categorieId", nullable: true })
-    // categorieId: number | null;
-
-
-
-
-
-
-
-
+    @BeforeInsert()
+    eventCreatedAt() {
+      this.createdAt = new Date();
+    }
+  
+    @BeforeUpdate()
+    eventUpdatedAt() {
+      this.updatedAt = new Date();
+    }
     
 }

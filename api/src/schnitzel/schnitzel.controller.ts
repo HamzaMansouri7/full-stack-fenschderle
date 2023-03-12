@@ -8,7 +8,7 @@ export class SchnitzelController {
   constructor(private readonly schnitzelService: SchnitzelService) {}
 
   @Post()
-  create(@Body() createSchnitzelDto: CreateSchnitzelDto) {
+  create(@Body() createSchnitzelDto: any) {
     return this.schnitzelService.create(createSchnitzelDto);
   }
 

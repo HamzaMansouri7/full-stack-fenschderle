@@ -52,3 +52,4 @@ import { Order } from "src/order/entities/order.entity";
    @Column("integer", { name: "updatedby", nullable: true })
    updatedBy: number | null;
  }
+
