@@ -11,13 +11,14 @@ import { EventsComponent } from './events/events.component';
 import { ChefsComponent } from './chefs/chefs.component';
 import { StatsCounterComponent } from './stats-counter/stats-counter.component';
 import { MenuComponent } from './menu/menu.component';
-import { BookTableComponent } from './book-table/book-table.component';
+
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductCardComponent } from './menu/product-card/product-card.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { OrderComponent } from './order/order.component';
+import { BookTableComponent } from './book-table/book-table.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { OrderComponent } from './order/order.component';
     MainRoutingModule,
     TranslateModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+ 
   ],
   exports:[HomeComponent,
     AboutUsComponent,ContactComponent,GalleryComponent,ContactComponent,
@@ -49,6 +51,6 @@ import { OrderComponent } from './order/order.component';
     TestimonialsComponent,
     EventsComponent,
     ChefsComponent,MenuComponent,
-    StatsCounterComponent,TestimonialsComponent,EventsComponent,BookTableComponent,ProductCardComponent,OrderComponent]
+    StatsCounterComponent,TestimonialsComponent,EventsComponent,BookTableComponent,ProductCardComponent,OrderComponent,]
 })
 export class MainModule { }

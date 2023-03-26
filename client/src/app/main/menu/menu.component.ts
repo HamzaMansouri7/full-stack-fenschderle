@@ -79,7 +79,6 @@ export class MenuComponent implements OnInit {
   }
 
   navigateTo(path:string){
-    console.log('path', path)
     this.menuArray.forEach(el => {
       if (el.id===path){
         el.isShown = true;
