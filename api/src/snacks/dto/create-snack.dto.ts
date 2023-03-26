@@ -3,25 +3,28 @@ import { ApiProperty } from "@nestjs/swagger";
 export class CreateSnackDto {
     @ApiProperty()
     name?: string;
-
-    @ApiProperty()
+   
+   @ApiProperty()
     description?: string;
-    
-    @ApiProperty()
+ 
+   @ApiProperty()
     price?: number;
-
+ 
+   @ApiProperty()
+    discount?: number;
+ 
     @ApiProperty()
     isDeleted?: number;
-
+ 
     @ApiProperty()
-    createdAt?: Date;
-
+    createdAt?: number;
+ 
     @ApiProperty()
     createdBy?: number;
-
+ 
     @ApiProperty()
-    updatedAt?: Date;
-
+    updatedAt?: number;
+ 
     @ApiProperty()
     updatedBy?: number;
 }

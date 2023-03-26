@@ -61,12 +61,13 @@ constructor(
 ) { }
 
 async create(Salatbody: any) {
-  const newSalat = this.SalatRepository.create(Salatbody);
+  let newSalat = this.SalatRepository.create(Salatbody);
+  newSalat = {...Salatbody, createdAt : new Date()};
   return await this.SalatRepository.save(newSalat) ;
 }
 
-async findAll() {
-  return await this.SalatRepository.find() ;;
+async findAll(): Promise<Salat[]> {
+  return await this.SalatRepository.find() ;
 }
 
 // async findOne(id: number) {
@@ -89,7 +90,7 @@ async findOne(id: any): Promise<Salat> {
 // update(id: number, updatePizzaDto: UpdatePizzaDto) {
  // return `This action updates a #${id} pizza`;
 //}
-async update(id: number, updateSalatDto: UpdateSalatDto): Promise<Salat> {
+async patch(id: number, updateSalatDto: UpdateSalatDto): Promise<Salat> {
   const Salat = await this.findOne(id);
   if (!Salat) {
     throw new NotFoundException(`Salat #${id} not found`);

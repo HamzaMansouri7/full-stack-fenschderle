@@ -24,7 +24,7 @@ export class PastaController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePastaDto: UpdatePastaDto) {
-    return this.pastaService.update(+id, updatePastaDto);
+    return this.pastaService.patch(+id, updatePastaDto);
   }
 
   @Delete(':id')

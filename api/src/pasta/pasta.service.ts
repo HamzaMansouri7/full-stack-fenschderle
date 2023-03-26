@@ -25,13 +25,23 @@ async findOne(id: any): Promise<Pasta> {
   return pasta;
 }
 
+
+  // async findOne(id: any): Promise<Pizza> {
+  //   const pizza = await this.pizzaRepository.findOne(id);
+  //   if (!pizza) {
+  //     throw new NotFoundException(`Pizza #${id} not found`);
+  //   }
+  //   return pizza;
+  // }
+
 async create(pastaBody: any) {
-  const newpasta = this.pastaRepository.create(pastaBody);
+  let newpasta = this.pastaRepository.create(pastaBody);
+  newpasta = {...pastaBody, createdAt : new Date()};
   return await this.pastaRepository.save(newpasta) ;
 }
 
-async update(id: number, updatepastaDto: UpdatePastaDto) {
-  const pasta = await this.findOne(id);
+async patch(id: any, updatepastaDto: UpdatePastaDto) {
+  const pasta = await this.pastaRepository.findOne({where : {id:id}});
   if (!pasta) {
     throw new NotFoundException(`pasta #${id} not found`);
   }

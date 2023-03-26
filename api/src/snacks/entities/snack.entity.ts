@@ -5,19 +5,23 @@ export class Snack {
     @ApiProperty()
     @PrimaryGeneratedColumn({ type: "integer", name: "id" })
     id: number;
-
+  
     @ApiProperty()
     @Column("text", { name: "name", nullable: true})
     name: string | null;
-
+  
     @ApiProperty()
     @Column("text", { name: "description", nullable: true })
     description: string | null;
-    
+  
     @ApiProperty()
-    @Column("double precision", { name: "price", nullable: true, default: 0 })
+    @Column("double precision", { name: "totalprice", nullable: true, default: 0 })
     price: number | null;
-    
+  
+    @ApiProperty()
+    @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
+    discount: number | null;
+  
     @ApiProperty()
     @Column("boolean", { name: "isdeleted", nullable: true, default: false })
     isDeleted: boolean | null;

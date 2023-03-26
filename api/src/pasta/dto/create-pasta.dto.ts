@@ -4,34 +4,30 @@ import { ApiProperty } from "@nestjs/swagger/dist/decorators";
 export class CreatePastaDto {
 
   @ApiProperty()
-  isDeleted?: number;
+   name?: string;
   
   @ApiProperty()
    description?: string;
 
   @ApiProperty()
-  reference?: string;
+   price?: number;
 
   @ApiProperty()
-   deliveryPrice?: number;
+   discount?: number;
 
-  @ApiProperty()
-   totalPrice?: number;
+   @ApiProperty()
+   isDeleted?: number;
 
-  @ApiProperty()
-   timbrePrice?: number;
+   @ApiProperty()
+   createdAt?: number;
 
-  @ApiProperty()
-   globalDiscount?: number;
+   @ApiProperty()
+   createdBy?: number;
 
+   @ApiProperty()
+   updatedAt?: number;
 
-  @ApiProperty()
-   isCompleted?: boolean;
-
-  @ApiProperty()
-   active?: boolean;
-
-  @ApiProperty()
-  readonly userName?: string;
+   @ApiProperty()
+   updatedBy?: number;
 
 }

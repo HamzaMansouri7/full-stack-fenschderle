@@ -38,20 +38,18 @@ export class PizzaService {
     return pizza;
   }
 
- // update(id: number, updatePizzaDto: UpdatePizzaDto) {
-   // return `This action updates a #${id} pizza`;
-  //}
-  async kalba(id: number, updatePizzaDto: UpdatePizzaDto): Promise<Pizza> {
-    const pizza = await this.findOne(id);
-    if (!pizza) {
-      throw new NotFoundException(`Pizza #${id} not found`);
+
+  async patch(id: any, updatepizzaDto: UpdatePizzaDto) {
+    const Pizza = await this.pizzaRepository.findOne({where : {id:id}});
+    if (!Pizza) {
+      throw new NotFoundException(`pizza #${id} not found`);
     }
-    Object.assign(pizza, updatePizzaDto);
-    await this.pizzaRepository.save(pizza);
-    return pizza;
+    Object.assign(Pizza, UpdatePizzaDto);
+    await this.pizzaRepository.save(Pizza);
+    return Pizza;
   }
 
- // remove(id: number) {
+ //  remove(id: number) {
   //  return `This action removes a #${id} pizza`;
   //}
   async remove(id: number) {

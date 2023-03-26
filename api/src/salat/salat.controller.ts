@@ -24,7 +24,7 @@ export class SalatController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSalatDto: UpdateSalatDto) {
-    return this.salatService.update(+id, updateSalatDto);
+    return this.salatService.patch(+id, updateSalatDto);
   }
 
   @Delete(':id')

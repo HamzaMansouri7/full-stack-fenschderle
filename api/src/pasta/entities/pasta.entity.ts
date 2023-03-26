@@ -22,7 +22,7 @@ export class Pasta {
 
   @ApiProperty()
   @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
-  globalDiscount: number | null;
+  discount: number | null;
 
   @ApiProperty()
   @Column("boolean", { name: "isdeleted", nullable: true, default: false })
@@ -43,9 +43,5 @@ export class Pasta {
   @ApiProperty()
   @Column("integer", { name: "updatedby", nullable: true })
   updatedBy: number | null;
-
-  @ApiProperty()
-  @Column("boolean", { name: "active", nullable: true, default: true })
-  active: boolean | null;
 
 }
