@@ -6,21 +6,9 @@ export class Size {
     id: number;
   
     @ApiProperty()
-    @Column("number", { name: "taille1", nullable: true})
-    taille1: number | null;
+    @Column("text", { name: "description", nullable: false})
+    description: string | null;
     
-    @ApiProperty()
-    @Column("number", { name: "taille2", nullable: true})
-    taille2: number | null;
-
-    @ApiProperty()
-    @Column("number", { name: "taille3", nullable: true})
-    taille3: number | null;
-    
-    @ApiProperty()
-    @Column("number", { name: "taille3", nullable: true})
-    price: number | null;
-  
     @ApiProperty()
     @Column("boolean", { name: "isdeleted", nullable: true, default: false })
     isDeleted: boolean | null;
