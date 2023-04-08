@@ -96,6 +96,20 @@
                },
                "contact5":{
                 "title":"Opening Hours"
+               },
+               "book-table":{
+                "title":"Table Reservation"
+               },
+               "book-us":{
+                "title":"Book"
+               },
+               "stay":{
+                "title":"Your Stay With Us"
+               },
+               "send":{
+                "title":"book a table"
+               },
+               "header-book":{
+                "title":"book a table"
                }
-
 }

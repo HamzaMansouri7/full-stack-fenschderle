@@ -60,7 +60,7 @@ export class MenuComponent implements OnInit {
     {id:2229,name:'beilagen',pictures:'assets/img/menu/salat/beilagen1.webp', price: 9,description:'kleiner Insalata Mista',quantity:2222,categoryId:'good' },
     {id:2230,name:'Insalata Caprese',pictures:'assets/img/menu/salat/insalat-caprese1.webp',price: 10, description:'Tomate, Mozzarella,Ruccola',quantity:2222,categoryId:'good' },
     {id:2231,name:'Insalata Mista',pictures:'assets/img/menu/salat/salat-mista1.webp',price: 10, description:'Tomate,Gurke,karotte,schafskäse',quantity:2222,categoryId:'good'},
-    {id:2232,name:'Italienischer salat',pictures:'assets/img/menu/salat/italiane-salat1.webp', price1: 9,description:'kleiner Insalata Mista' ,quantity:2222,categoryId:'good'},
+    {id:2232,name:'Italienischer salat',pictures:'assets/img/menu/salat/italiane-salat1.webp', price: 9,description:'kleiner Insalata Mista' ,quantity:2222,categoryId:'good'},
     {id:2233,name:'Chefsalata',pictures:'assets/img/menu/salat/salat-chef1.webp',price: 10, description:'Tomate, Mozzarella,Ruccola' ,quantity:2222,categoryId:'good'},
     {id:2234,name:'Dressings',pictures:'assets/img/menu/salat/dressings1.webp',price: 10, description:'Tomate,Gurke,karotte,schafskäse',quantity:2222,categoryId:'good'},
   ]

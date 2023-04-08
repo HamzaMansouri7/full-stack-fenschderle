@@ -97,6 +97,22 @@
            },
            "contact5":{
             "title":"Öffnungszeiten"
+           },
+           "book-table":{
+            "title":"Tisch Reservierung"
+           },
+           "book-us":{
+            "title":"Buchen Sie "
+           },
+           "stay":{
+            "title":"Ihren Aufenthalt bei uns"
+           },
+           "send":{
+            "title":"Tisch Reservieren"
+           },
+           "header-book":{
+            "title":"Tisch Reservieren"
            }
+
 }
 

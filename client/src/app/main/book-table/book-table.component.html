@@ -1,8 +1,8 @@
 <section id="book-a-table" class="book-a-table page-break">
     <div class="container" data-aos="fade-up">
        <div class="section-header">
-          <h2>Book A Table</h2>
-          <p>Book <span>Your Stay</span> With Us</p>
+          <h2 class="book-table">{{'book-table.title' | translate}}</h2>
+          <p class="book-us">{{'book-us.title' | translate}} <span class="stay">{{'stay.title' | translate}}</span></p>
        </div>
        <div class="row g-0">
           <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
@@ -43,7 +43,8 @@
                    <div class="error-message"></div>
                    <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
                 </div>
-                <div class="text-center"><button type="submit">Book a Table</button></div>
+                <div class="text-center"><button class="send" type="submit"onclick="location.href='mailto:houcem603@gmail.com?subject=Subject&body=Body'">{{'send.title' | translate}}</button></div>
+
              </form>
           </div>
        </div>
