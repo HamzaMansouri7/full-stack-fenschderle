@@ -3,6 +3,8 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
+<!--
+<div class="card-deck">
  <div class="card-group">
   <div class="card">
             <a [href]='products.pictures' class="glightbox">
@@ -22,8 +24,9 @@
     </div>
   </div>
 </div>
+</div>-->
   
-    <!-- https://getbootstrap.com/docs/4.0/components/card/#card-decks 
+    <!-- https://getbootstrap.com/docs/4.0/components/card/#card-decks -->
 
 <div class="card h-100 cursor-pointer m-6">
     <div class="menu-item">
@@ -51,7 +54,7 @@
             <p class="purchase-title">{{'cart.title' | translate}}</p>
         </div>
     </div>
-</div>-->
+</div>
 <!-- </div> -->
 <ng-template #content let-modal class="rounded-0 border-0">
     <div class="modal-body p-0 rounded-0 border-0">
@@ -95,7 +98,7 @@
                             <div class="d-flex">
                                 <input type="number" [(ngModel)]="qte" name="qte" class="input-modal mr-3"   >
                             </div>
-                            <small class="font-green3 text-left"min="1" *ngIf="qte<1"> kannst du nicht - 
+                            <small class="font-green3 text-left"min="1" *ngIf="qte<1"> können sie nicht - 
                             </small>
                         
                         </div>
