@@ -98,5 +98,13 @@ export class ProductCardComponent  {
     this.price= this.products.price * this.qte 
      console.log( this.price,'price');
   }
+  checkQuantity() {
+    if (this.qte > 1) {
+      alert("Quantity must be at least 1");
+    } else {
+      // Perform other actions if quantity is valid
+    }
+  }
+  
 
 }

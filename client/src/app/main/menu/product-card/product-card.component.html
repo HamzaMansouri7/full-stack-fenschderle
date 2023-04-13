@@ -3,41 +3,64 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<!-- <div class="card-deck"> -->
-
-    <div class="card h-100 cursor-pointer m-2">
-        <div class="menu-item">
-            <div class="toHover">
-                <a [href]='products.pictures' class="glightbox">
-                    <img src="{{products.pictures}}" class="menu-img img-fluid" alt="">
-                </a>
-            </div>
+<!--
+<div class="card-deck">
+ <div class="card-group">
+  <div class="card">
+            <a [href]='products.pictures' class="glightbox">
+                <img src="{{products.pictures}}" class="menu-img img-fluid" alt="">
+            </a>
+    <div class="card-body">
+      <div class="card-name font-weight-bold text-center">{{products.name}}</div>
+            <p class="ingredients">{{products.description}}</p>
+            <p class="price"> {{products.price }} €</p>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex" (click)="fullSceenAction(content,products)">
+            <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
+            height="45px">
+            <p class="purchase-title">{{'cart.title' | translate}}</p>
         </div>
+    </div>
+  </div>
+</div>
+</div>-->
+  
+    <!-- https://getbootstrap.com/docs/4.0/components/card/#card-decks -->
 
-        <div class="card-body h-100  pt-3 pb-0 cursor-pointer" routerLink="/product-detail/{{products?.id}}">
-            <span class="span-bg ml-3 text-white span-detail cursor-pointer" routerLink="/product-detail/{{products?.id}}">
-                <h6 class="ml-4 mr-4 mt-2 small-txt">{{'detail.title1' | translate}}</h6>
-            </span>
-            <div class="card-title">
-                <div class="h6 font-weight-bold text-center">{{products.name}}</div>
-            </div>
+<div class="card h-100 cursor-pointer m-6">
+    <div class="menu-item">
+        <div class="toHover">
+            <a [href]='products.pictures' class="glightbox">
+                <img src="{{products.pictures}}" class="menu-img img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="card-body pt-3 pb-0 mt-15 cursor-pointer">
+        <span class="span-bg ml-3 text-white span-detail cursor-pointer">
+            <h6 class="ml-4 mr-4 mt-2 small-txt">{{'detail.title1' | translate}}</h6>
+        </span>
+        <div class="card-title">
+            <div class="card-name font-weight-bold text-center">{{products.name}}</div>
             <p class="ingredients">{{products.description}}</p>
             <p class="price"> {{products.price }} €</p>
         </div>
-        <div class="card-footer cart-btn  p-0">
-            <div class="d-flex" (click)="fullSceenAction(content,products)">
-                <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
-                height="45px">
-                <p class="purchase-title">{{'cart.title' | translate}}</p>
-            </div>
+    </div>
+    <div class="card-footer cart-btn  p-0">
+        <div class="d-flex" (click)="fullSceenAction(content,products)">
+            <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
+            height="45px">
+            <p class="purchase-title">{{'cart.title' | translate}}</p>
         </div>
     </div>
+</div>
 <!-- </div> -->
 <ng-template #content let-modal class="rounded-0 border-0">
     <div class="modal-body p-0 rounded-0 border-0">
         <div class="container text-center ">
             <div class="d-flex mt-2">
-                <h6 class="h7">{{products?.name}}</h6>
+                <h6 class="modal-name">{{products?.name}}</h6>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-x m-1"
                     (click)="modal.dismiss('Cross click')" class=" ml-auto cursor-pointer" viewBox="0 0 16 16">
                     <path
@@ -46,7 +69,7 @@
             </div>
             <hr>
             
-            <div class="row mt-5">
+            <div class="row mt-0">
                 <div class="col-md-5 border-right">
                     <div class="row">
                         <div class="col-ml-2">
@@ -54,8 +77,7 @@
                                 title="herbabio products" itemprop="image" height="auto" width="100%">
                         </div>
                         <div class="text-center">
-                            
-                            <p class="h6 brown text-left mt-3 font-weight-bold">{{products.price
+                            <p class=" price-modal text-center mt-3 font-weight-bold">{{products.price
                                 |currency:'EUR':true}}</p>
                             <!-- <div class="text-left">Référence:<strong> {{products.reference}}</strong></div> -->
                             <!-- <div class="d-flex">
@@ -74,16 +96,16 @@
                             </div>-->
                             &nbsp;
                             <div class="d-flex">
-                                <input type="number" [(ngModel)]="qte" name="qte" class="iput-style mr-3" >
+                                <input type="number" [(ngModel)]="qte" name="qte" class="input-modal mr-3"   >
                             </div>
-                            <small class="font-green3 text-left" *ngIf="oldQte > 0"> * Vous avez déjà <b
-                                    class="brown">{{oldQte}}</b> élément(s) de ce produit dans votre panier
+                            <small class="font-green3 text-left"min="1" *ngIf="qte<1"> können sie nicht - 
                             </small>
+                        
                         </div>
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <div class="menge">
+                    <div class="menge-modal">
                         <!--<div class="silver-color font-weight-bold h5 ml-2">Il y a {{itemNumber}} articles dans votre
                             panier.</div>-->
                             <!--<div class="d-flex justify-content-between mt-3 mb-3">
@@ -93,7 +115,7 @@
                             </div>-->
 
                         <div class="d-flex justify-content-between mb-3">
-                            <div class="qte ml-2">{{'qte.title' | translate}}:</div>
+                            <div class="qte font-weight-bold ml-2 ml-2">{{'qte.title' | translate}}:</div>
                             <div class="font-weight-bold mr-2">{{qte}}</div>
                         </div>&nbsp;
                         <!-- <div class="d-flex justify-content-between mb-3"
@@ -115,11 +137,11 @@
                             <div class="font-weight-bold mr-2">{{products.price * this.qte |
                                 currency:'EUR':true}}</div>
                         </div>
-                        <div class="menge">
+                        <div class="menge-modal">
                             <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
                                 (click)="modal.dismiss('Cross click');sendToCart()">
-                                <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark ">back to menu</p>
-                            </button>&nbsp;&nbsp;&nbsp;
+                                <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a href="#menu">back to menu</a></p>
+                            </button> &nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
                                 (click)="modal.dismiss('Cross click');sendToCart()" >
                                 <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a href="#order">purchase</a></p>

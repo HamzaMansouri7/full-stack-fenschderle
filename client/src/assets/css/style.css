@@ -80,6 +80,7 @@ section {
 }
 
 .section-header p span {
+
   color: var(--color-primary);
 }
 
@@ -943,10 +944,10 @@ section {
 }
 
 .menu .tab-content .menu-item .price {
-  
+ 
   font-size: 24px;
   font-weight: 700;
-  color: rgb(103, 57, 146)
+  color: rgb(82, 146, 57)
 }
 
 /*--------------------------------------------------------------
