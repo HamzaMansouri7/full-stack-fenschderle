@@ -96,9 +96,9 @@
                             </div>-->
                             &nbsp;
                             <div class="d-flex">
-                                <input type="number" [(ngModel)]="qte" name="qte" class="input-modal mr-3"   >
+                                <input type="number" [(ngModel)]="inputedQuantity" name="qte" class="input-modal mr-3"   >
                             </div>
-                            <small class="font-green3 text-left"min="1" *ngIf="qte<1"> können sie nicht - 
+                            <small class="font-green3 text-left"min="1" *ngIf="inputedQuantity < 1"> können sie nicht - 
                             </small>
                         
                         </div>
@@ -116,7 +116,7 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <div class="qte font-weight-bold ml-2 ml-2">{{'qte.title' | translate}}:</div>
-                            <div class="font-weight-bold mr-2">{{qte}}</div>
+                            <div class="font-weight-bold mr-2">{{inputedQuantity}}</div>
                         </div>&nbsp;
                         <!-- <div class="d-flex justify-content-between mb-3"
                             *ngIf="products.price * this.qte > 60">
@@ -134,16 +134,16 @@
                         </div>--> 
                         <div class="d-flex justify-content-between mt-3 mb-3">
                             <div class="font-weight-bold ml-2">{{'font-weight-bold.title' | translate}}:</div>
-                            <div class="font-weight-bold mr-2">{{products.price * this.qte |
+                            <div class="font-weight-bold mr-2">{{products.price * this.inputedQuantity |
                                 currency:'EUR':true}}</div>
                         </div>
                         <div class="menge-modal">
                             <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
-                                (click)="modal.dismiss('Cross click');sendToCart()">
+                                (click)="modal.dismiss('Cross click')">
                                 <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a href="#menu">back to menu</a></p>
                             </button> &nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
-                                (click)="modal.dismiss('Cross click');sendToCart()" >
+                                (click)="modal.dismiss('Cross click');sendToCart(products)" >
                                 <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a href="#order">purchase</a></p>
                             </button>
                         </div>

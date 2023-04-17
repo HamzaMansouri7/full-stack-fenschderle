@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../../interfaces';
+import { SharedService } from 'src/services/shared.service';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -15,13 +17,12 @@ export class ProductCardComponent  {
   productArray: any;
   itemNumber: number;
   cart:any;
-  qte: number = 1;
+  inputedQuantity: number = 1;
   oldQte:number;
   price:number;
-  constructor(private modalService: NgbModal
-              // private cartService:CartService,
-              // private sharedService:SharedService
-              ){}
+  constructor(private modalService: NgbModal,
+              private cartService:CartService,
+              private sharedService:SharedService){}
                   
   ngOnChanges() {
     // this.products?.pictures?.forEach(element => {
@@ -41,7 +42,7 @@ export class ProductCardComponent  {
     this.modalService.open(content, { size: 'lg',centered: true});
     this.getOldData()
     //this.verifOldQuantity(products);
-    this.qte=1
+    this.inputedQuantity=1
   }
 
   verifOldQuantity(products:any) {
@@ -55,51 +56,43 @@ export class ProductCardComponent  {
     }
   }
 
-
-  sendToCart() {
-    let prod = new Product()
-    prod = this.products
-    if(this.oldQte>0){
-      prod.quantity = this.oldQte +this.qte
-    }else{
-      prod.quantity = this.qte
-    }
-    // this.cartService.addProduct(prod);
-    // this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
+  sendToCart(products:Product) {
+    this.products.quantity = this.inputedQuantity;
+    this.cartService.addProduct(products);
+    this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0
   }
 
   increaseValue() {
-    this.qte = this.qte + 1
+    this.inputedQuantity = this.inputedQuantity + 1
   }
   decreaseValue() {
-    if (this.qte > 0) {
-      this.qte = this.qte - 1
+    if (this.inputedQuantity > 0) {
+      this.inputedQuantity = this.inputedQuantity - 1
     }
 
   }
   getOldData(){
-    // this.productArray = this.cartService.getProductCart()
-    // if (this.productArray?.length < 1) {
-    //   let cookie: any
-    //   cookie = this.sharedService.getAllCookies()
-    //   Object.entries(cookie).forEach(([key, val]) => {
-    //     var element = JSON.stringify(val);
-    //     if (element.length > 1000) {
-    //       var parsed = JSON.parse(JSON.parse(element));
-    //       this.productArray.push(parsed)
-    //     }
-    //   }
-    //   );
-    // }
-    // this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
+    this.productArray = this.cartService.getProductCart()
+    if (this.productArray?.length < 1) {
+      let cookie: any
+      cookie = this.sharedService.getAllCookies()
+      Object.entries(cookie).forEach(([key, val]) => {
+        var element = JSON.stringify(val);
+        if (element.length > 1000) {
+          var parsed = JSON.parse(JSON.parse(element));
+          this.productArray.push(parsed)
+        }
+      }
+      );
+    }
+    this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
   }
 
   calculprice(){
-    this.price= this.products.price * this.qte 
-     console.log( this.price,'price');
+    this.price= this.products.price * this.inputedQuantity 
   }
   checkQuantity() {
-    if (this.qte > 1) {
+    if (this.inputedQuantity > 1) {
       alert("Quantity must be at least 1");
     } else {
       // Perform other actions if quantity is valid
