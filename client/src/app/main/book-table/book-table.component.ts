@@ -11,15 +11,15 @@ export class BookTableComponent implements OnInit {
   email: string;
   phone: number;
   date: Date;
-  time: string;
+  time: string; 
   people: number;
-  message: number;
+  message: string;
   constructor() { }
 
   ngOnInit(): void {
   }
   // sendEmail() {
-   // var name = document.getElementById("name").value;
+   // var name = document.getElementById("name").value;s
    // var email = document.getElementById("email").value;
     //var body = document.getElementById("body").value;
    // var mailtoLink = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
