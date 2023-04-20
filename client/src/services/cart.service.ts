@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { GlobalObjectServiceService } from 'src/app/global-object-service.service';
 import { DOCUMENT } from '@angular/common';
 import { SharedService } from './shared.service';
-import { Product } from 'src/app/main/interfaces';
+import { Product } from 'src/app/interfaces';
 
 @Injectable({
   providedIn: 'root'
