@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
+import { SharedService } from 'src/services/shared.service';
 
 @Component({
   selector: 'app-order',
@@ -10,14 +11,18 @@ export class OrderComponent implements OnInit {
 
   public products : any = [];
   public grandTotal !: number;
-  constructor(private cartService : CartService) { }
+  totalCardPrice: any;
+  constructor(private cartService : CartService, private sharedService:SharedService) { }
 
   ngOnInit(): void {
-    this.products = this.cartService.getProductCart()
-    // .subscribe((res:any)=>{
-    //   this.products = res;
-    //   this.grandTotal = this.cartService.getTotalPrice();
-    // })
+    this.products = this.sharedService.getAllCookies();
+    console.log(this.products)
+    this.totalCardPrice = this.products
+    .map((item:any) => item.totProdPrice)
+    console.log('this.totalCardPrice',this.totalCardPrice)
+    this.totalCardPrice = this.products.reduce((acc:any,item:any) => acc  + item.totProdPrice,0);
+    console.log('this.totalCardPrice',this.totalCardPrice)
+
   }
   removeItem(item: any){
     this.cartService.deleteItemFromCart(item.id);

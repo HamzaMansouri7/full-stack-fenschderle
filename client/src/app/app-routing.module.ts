@@ -1,20 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OrderComponent } from './order/order.component';
-import { MenuComponent } from './menu/menu.component';
-import { HomeComponent } from './home/home.component';
-import { BookTableComponent } from './book-table/book-table.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ContactComponent } from './contact/contact.component';
+
 
 const routes: Routes = [
-  {path:'', redirectTo:'home',pathMatch:'full'},
-  {path:'home', component: HomeComponent},
-  {path:'menu', component: MenuComponent},
-  {path:'order', component: OrderComponent},
-  {path:'bookTable', component: BookTableComponent},
-  {path:'gallery', component: GalleryComponent},
-  {path:'contact', component: ContactComponent},
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path:'contact',
+    loadChildren :()=> import('./contact/contact.module').then(m=>m.ContactModule)
+  }, 
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)
+  },
+  {
+    path: 'book-table',
+    loadChildren: () => import('./book-table/book-table.module').then(m => m.BookTableModule)
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+  }
   
 ];
 

@@ -15,7 +15,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     CoreRoutingModule,
-    TranslateModule
+    TranslateModule.forChild()
   ],
   exports:[HeaderComponent,FooterComponent]
 })

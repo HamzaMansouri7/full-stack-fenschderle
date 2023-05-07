@@ -5,35 +5,39 @@
                 <table class="table table-responsive">
                     <thead>
                         <tr>
-                            <th>Sr.No</th>
-                            <th>Product Name</th>
-                            <th>Product Image</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Action</th>
+                            <th class="th-name">{{'th-name.title' | translate}}</th>
+                            <th class="th-Image">{{'th-Image.title' | translate}}</th>
+                            <th class="th-Description">{{'th-Description.title' | translate}}</th>
+                            <th class="th-Price">{{'th-Price.title' | translate}}</th>
+                            <th class="th-Quantity">{{'th-Quantity.title' | translate}}</th>
+                            <th class="th-Total">{{'th-Total.title' | translate}}</th>
+                            <th class="th-Action">{{'th-Action.title' | translate}}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of products; let i = index">
-                            <td>{{i+1}}</td>
-                            <td>{{item.title}}</td>
-                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                        <tr *ngFor="let item of products">
+                            <td class="w-25">{{item.name}}</td>
+                            <td><img style="width: 120px;" src="{{item.pictures}}" alt=""></td>
                             <td style="width: 25%;">{{item.description}}</td>
                             <th style="width: 12%;">{{item.price}}</th>
                             <td style="width: 12%;">{{item.quantity}}</td>
-                            <td style="width: 12%;">{{item.total}}</td>
+                            <td style="width: 12%;">{{item.totProdPrice }}</td> 
+                            <!-- // pipe currency  -->
                             <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button class="glightbox btn-book-a-table d-flex align-items-center">
+                                    <i class="bi bi-play-circle mr-1"></i>cc
+                                    </button>
+                           
+                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="4"></td>
+                            <td><button class="round-btn">action</button></td>
                             <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
                             <td><button class="btn btn-success">Checkout</button></td>
-                            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                            <td><strong class="Grand Total">{{'Grand Total.title' | translate}}:{{totalCardPrice|currency:'EUR':true}}</strong></td>
                         </tr>
                     </tbody>
                 </table>
