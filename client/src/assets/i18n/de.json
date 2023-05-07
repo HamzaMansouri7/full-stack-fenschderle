@@ -112,6 +112,30 @@
            },
            "header-book":{
             "title":"Tisch Reservieren"
+           },
+           "th-name":{
+            "title":"Produktname"
+           },
+           "th-Image":{
+            "title":"Produktbild"
+           },
+           "th-Description":{
+            "title":"Beschreibung"
+           },
+           "th-Price":{
+            "title":"Preis"
+           },
+           "th-Quantity":{
+            "title":"Menge"
+           },
+           "th-Total":{
+            "title":"Gesamt"
+           },
+           "th-Action":{
+            "title":"Aktion"
+           },
+           "Grand Total":{
+            "title":"Gesamtsumme"
            }
 
 }

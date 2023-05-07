@@ -56,9 +56,10 @@ export class ProductCardComponent  {
     }
   }
 
-  sendToCart(products:Product) {
+  sendToCart(products:any) {
     this.products.quantity = this.inputedQuantity;
-    this.cartService.addProduct(products);
+    const UpdatedProduct =  {...products , totProdPrice:   products.price * this.inputedQuantity  }
+    this.cartService.addProduct(UpdatedProduct);
     this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0
   }
 

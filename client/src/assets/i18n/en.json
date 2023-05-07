@@ -111,5 +111,30 @@
                },
                "header-book":{
                 "title":"book a table"
+               },
+               "th-name":{
+                "title":"Product Name"
+               },
+               "th-Image":{
+                "title":"Product Image"
+               },
+               "th-Description":{
+                "title":"Description"
+               }, 
+               "th-Price":{
+                "title":"Price"
+               },
+               "th-Quantity":{
+                "title":"Quantity"
+               },
+               "th-Total":{
+                "title":"Total"
+               },
+               "th-Action":{
+                "title":"Action"
+               },
+               "Grand Total":{
+                "title":"Grand Total"
                }
+    
 }

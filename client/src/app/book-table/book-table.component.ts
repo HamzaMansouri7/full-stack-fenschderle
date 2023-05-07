@@ -28,7 +28,7 @@ export class BookTableComponent implements OnInit {
   ;
 
   sendEmail() {
-    const mailtoLink = `mailto:${this.name}?email=${this.email}&phone=${this.phone}&date=${this.date}&time=${this.time}&people=${this.people}&message=${this.message}`;
+    let mailtoLink = `mailto:${this.name}?email=${this.email}&phone=${this.phone}&date=${this.date}&time=${this.time}&people=${this.people}&message=${this.message}`;
     window.location.href = mailtoLink;
   }
 

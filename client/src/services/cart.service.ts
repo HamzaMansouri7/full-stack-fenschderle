@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { GlobalObjectServiceService } from 'src/app/global-object-service.service';
 import { DOCUMENT } from '@angular/common';
 import { SharedService } from './shared.service';
-import { Product } from 'src/app/main/interfaces';
+import { Product } from 'src/app/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,10 @@ export class CartService  {
   getProductCart(){
     this.productArray = this.cart
     if (this.productArray.length < 1) {
+      console.log('icic ok ')
       let cookie: any
-      cookie = this.sharedService.getAllCookies()
+      cookie = this.sharedService.getAllCookies();
+      console.log('cookie',cookie);
       Object.entries(cookie).forEach(([key, val]) => {
         var element = JSON.stringify(val);
         if (element.length > 1000) {
@@ -31,6 +33,7 @@ export class CartService  {
   }
 
 addProduct(product: Product) {
+  console.log(product)
     this.cart =this.sharedService.getAllCookies();
     const existingProductIndex = this.cart.findIndex((item:any) => item.id === product.id);
     if (existingProductIndex >= 0) {
