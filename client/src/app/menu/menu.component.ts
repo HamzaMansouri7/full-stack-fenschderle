@@ -27,6 +27,7 @@ export class MenuComponent implements OnInit {
     //  pictures
     //  quantity
   ]
+  
    schnitzelArray = [
     {id:2207, name:'Schnitzel Wiener Art', pictures:'assets/img/menu/schnitzel/schnitzel-winer1.webp', price:9.50 , price2: 12.50, description:'mit Pommes und beilagen Salat',quantity:0,categoryId:'good' },
     {id:2208, name:'Schnitzel Wiener Art', pictures:'assets/img/menu/schnitzel/pngegg11.webp', price:10.00,price2: 13.50, description:'mit Rigatoni Mafiosi oder Pasta und Sauce nach Wahl',quantity:0,categoryId:'good' },

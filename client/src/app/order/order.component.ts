@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { SharedService } from 'src/services/shared.service';
+import { createLogicalAnd } from 'typescript';
 
 @Component({
   selector: 'app-order',
@@ -9,7 +10,7 @@ import { SharedService } from 'src/services/shared.service';
 })
 export class OrderComponent implements OnInit {
 
-  public products : any = [];
+  public products : any[];
   public grandTotal !: number;
   totalCardPrice: any;
   constructor(private cartService : CartService, private sharedService:SharedService) { }
@@ -24,12 +25,18 @@ export class OrderComponent implements OnInit {
     console.log('this.totalCardPrice',this.totalCardPrice)
 
   }
+  // toDo:
   removeItem(item: any){
+    console.log('item',item);
     this.cartService.deleteItemFromCart(item.id);
   }
 
   emptycart(){
     this.cartService.deleteAllprodCart(this.products);
+  }
+
+  performPaiement(){
+
   }
 
 }
