@@ -11,9 +11,6 @@ import { CartService } from 'src/services/cart.service';
 })
 export class ProductCardComponent  {
   @Input() product:any
-  // photoList: PhotoList=new PhotoList();
-  photoLength: number;
-  tabImages=[]
   productArray: any;
   itemNumber: number;
   cart:any;
@@ -25,17 +22,6 @@ export class ProductCardComponent  {
               private sharedService:SharedService){}
                   
   ngOnChanges() {
-    // this.product?.pictures?.forEach(element => {
-    //   this.tabImages.push(element.url)
-    // });
-    // this.photoList.photos = this.tabImages;
-    // this.photoList.imgObject = []
-    // this.photoLength = this.photoList.photos.length
-    // if (this.photoList.photos) {
-    //   this.photoList.imgObject = []
-    //   this.photoList.imgObject = [{active : false , img : this.photoList.photos[Math.abs(0 % this.photoLength)]}]
-    //   this.photoList.imgObject[0].active = true
-    // }
     this.calculprice();
   }
   fullSceenAction(cartModal: any,product:Product) {
@@ -95,6 +81,8 @@ export class ProductCardComponent  {
   calculprice(){
     this.price= this.product.price * this.inputedQuantity 
   }
+
+  
   checkQuantity() {
     if (this.inputedQuantity > 1) {
       alert("Quantity must be at least 1");
