@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TranslateModule.forChild(),
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  exports:[BookTableComponent]
+
 })
 export class BookTableModule { }

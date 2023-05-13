@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { OrderRoutingModule } from './order-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { OrderComponent } from './order.component';
+import { MenuModule } from '../menu/menu.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { OrderComponent } from './order.component';
   imports: [
     CommonModule,
     OrderRoutingModule ,
-    TranslateModule
+    TranslateModule,
+    MenuModule
   ]
 })
 export class OrderModule { }

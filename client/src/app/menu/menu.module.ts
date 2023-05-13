@@ -21,6 +21,6 @@ import { MenuComponent } from './menu.component';
     ReactiveFormsModule,
     TranslateModule.forChild()
   ],
-  exports:[]
+  exports:[MenuComponent]
 })
 export class MenuModule { }

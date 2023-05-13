@@ -1,8 +1,8 @@
-.card {
-    height: 60vh;
-    margin: 25px;
-    padding: 25px;
-}
+// .card {
+//     height: 60vh;
+//     margin: 25px;
+//     padding: 25px;
+// }
 
 .center img {
     text-decoration: none;
@@ -47,7 +47,7 @@ h6 {
     border-radius: 3px !important;
 }
 
-.round-btn{
+.round-btn {
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 1px;
@@ -59,4 +59,70 @@ h6 {
     color: black;
     background: #f6ca67;
     box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+.bg-grey {
+    background-color: #eae8e8;
+}
+
+@media (min-width: 992px) {
+    .card-registration-2 .bg-grey {
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+}
+
+@media (max-width: 991px) {
+    .card-registration-2 .bg-grey {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+}
+
+.input-cart {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    width: 4vw;
+}
+
+
+.pay-btn {
+    transform: translateX(0%) translateY(170%);
+}
+
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.bg-paiement{
+    background-color: #5989bd !important; 
+}
+.bg-orange{
+    background-color: #F6CA67 !important;    
 }
