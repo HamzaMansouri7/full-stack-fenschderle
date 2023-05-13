@@ -54,8 +54,10 @@ updateCookie(cart: any[]) {
   }
   
 
-  deleteItemFromCart(id:number){
-    this.document.cookie = "cart"+id+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  deleteItemFromCart(itemId:any){
+    const productList = this.getProductCart();
+    //delete this itemId from the productList 
+    this.updateCookie(productList)
   }
 
     deleteAllprodCart(productArray:any){
@@ -66,4 +68,7 @@ updateCookie(cart: any[]) {
     //   var event = new CustomEvent('updateCartItem', { 'detail': true });
     //   this.GlobalObjectServiceService.getWindow().dispatchEvent(event);
     }
+
+    // this.document.cookie = "cart"+id+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+
 }
