@@ -24,7 +24,6 @@ export class OrderComponent implements OnInit {
     console.log(this.products)
     this.totalCardPrice = this.products
       .map((item: any) => item.totProdPrice)
-    console.log('this.totalCardPrice', this.totalCardPrice)
     this.totalCardPrice = this.products.reduce((acc: any, item: any) => acc + item.totProdPrice, 0);
     console.log('this.totalCardPrice', this.totalCardPrice)
 

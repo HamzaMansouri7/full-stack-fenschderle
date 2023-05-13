@@ -10,7 +10,7 @@ import { CartService } from 'src/services/cart.service';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent  {
-  @Input() products:any
+  @Input() product:any
   // photoList: PhotoList=new PhotoList();
   photoLength: number;
   tabImages=[]
@@ -25,7 +25,7 @@ export class ProductCardComponent  {
               private sharedService:SharedService){}
                   
   ngOnChanges() {
-    // this.products?.pictures?.forEach(element => {
+    // this.product?.pictures?.forEach(element => {
     //   this.tabImages.push(element.url)
     // });
     // this.photoList.photos = this.tabImages;
@@ -38,17 +38,17 @@ export class ProductCardComponent  {
     // }
     this.calculprice();
   }
-  fullSceenAction(content: any,products:Product) {
-    this.modalService.open(content, { size: 'lg',centered: true});
+  fullSceenAction(cartModal: any,product:Product) {
+    this.modalService.open(cartModal, { size: 'lg',centered: true});
     this.getOldData()
-    //this.verifOldQuantity(products);
+    this.verifOldQuantity(product);
     this.inputedQuantity=1
   }
 
-  verifOldQuantity(products:any) {
+  verifOldQuantity(product:any) {
     if (this.productArray.length>0) {
       this.productArray.forEach((element:any) => {
-          if(element.id==products.id){
+          if(element.id==product.id){
             this.oldQte=element.quantity
 
           }
@@ -56,9 +56,9 @@ export class ProductCardComponent  {
     }
   }
 
-  sendToCart(products:any) {
-    this.products.quantity = this.inputedQuantity;
-    const UpdatedProduct =  {...products , totProdPrice:   products.price * this.inputedQuantity  }
+  sendToCart(product:any) {
+    this.product.quantity = this.inputedQuantity;
+    const UpdatedProduct =  {...product , totProdPrice:   product.price * this.inputedQuantity  }
     this.cartService.addProduct(UpdatedProduct);
     this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0
   }
@@ -73,24 +73,27 @@ export class ProductCardComponent  {
 
   }
   getOldData(){
-    this.productArray = this.cartService.getProductCart()
-    if (this.productArray?.length < 1) {
-      let cookie: any
-      cookie = this.sharedService.getAllCookies()
-      Object.entries(cookie).forEach(([key, val]) => {
-        var element = JSON.stringify(val);
-        if (element.length > 1000) {
-          var parsed = JSON.parse(JSON.parse(element));
-          this.productArray.push(parsed)
-        }
-      }
-      );
-    }
-    this.itemNumber = this.sharedService.cartItemNumber(this.productArray)
+    // this.productArray = this.cartService.getProductCart()
+    this.productArray = this.sharedService.getAllCookies();
+
+    // if (this.productArray?.length < 1) {
+    //   let cookie: any
+    //   cookie = this.sharedService.getAllCookies()
+    //   Object.entries(cookie).forEach(([key, val]) => {
+    //     var element = JSON.stringify(val);
+    //     if (element.length > 1000) {
+    //       var parsed = JSON.parse(JSON.parse(element));
+    //       this.productArray.push(parsed)
+    //     }
+    //   }
+    //   );
+    // }
+    this.itemNumber = this.sharedService.cartItemNumber(this.productArray);
+    console.log('itemNumber',this.itemNumber);
   }
 
   calculprice(){
-    this.price= this.products.price * this.inputedQuantity 
+    this.price= this.product.price * this.inputedQuantity 
   }
   checkQuantity() {
     if (this.inputedQuantity > 1) {
