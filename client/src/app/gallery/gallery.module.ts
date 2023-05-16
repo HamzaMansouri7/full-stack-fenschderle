@@ -14,6 +14,8 @@ import { GalleryComponent } from './gallery.component';
     CommonModule,
     GalleryRoutingModule,
     TranslateModule.forChild()
-  ]
+  ],
+  exports:[GalleryComponent]
+
 })
 export class GalleryModule { }

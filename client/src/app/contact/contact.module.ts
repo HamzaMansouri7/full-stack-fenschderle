@@ -14,6 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     ContactRoutingModule,
     TranslateModule.forChild()
-  ]
+  ],
+  exports:[ContactComponent]
+
 })
 export class ContactModule { }

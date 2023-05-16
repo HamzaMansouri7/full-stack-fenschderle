@@ -45,96 +45,117 @@
     "h2":{
         "title1":"Our Menu"
         },
-        "p":{
+    "p":{
             "title1":"Check Our" 
         },
-        "span":{
+    "span":{
             "title1":"Fenschderle Menu" 
         },  
-        "p1":{
+    "p1":{
             "title1":"Check Our" 
         },
-        "span1":{
+    "span1":{
             "title1":"Fenschderle Galerie" 
         },
-        "p2":{
+    "p2":{
             "title1":"Share",
             "title2":"In Our Restaurant "
         },
-        "span3":{
+    "span3":{
             "title1":"Your Moments" 
         },
-        " p11":{
+    " p11":{
             "title1":" Back to menu"
         } ,
-        "font-weight-bold":{
+    "font-weight-bold":{
             "title":"total"
            },
-           "qte":{
+    "qte":{
             "title":"Quantity"
            },
-           "footer1":{
+    "footer1":{
             "title":"Opening Hours" 
               },
-              "footer2":{
+     "footer2":{
                 "title":"Follow Us"
               },
-              "footer3":{
+    "footer3":{
                 "title":"Reservations"
               },
-              "contact1":{
+    "contact1":{
                 "title":"Contact"
                },
-               "contact2":{
+    "contact2":{
                 "title":"Our Address"
                },
-               "contact3":{
+    "contact3":{
                 "title":"Email Us"
                },
-               "contact4":{
+    "contact4":{
                 "title":"Call Us"
                },
-               "contact5":{
+    "contact5":{
                 "title":"Opening Hours"
                },
-               "book-table":{
+    "book-table":{
                 "title":"Table Reservation"
                },
-               "book-us":{
+    "book-us":{
                 "title":"Book"
                },
-               "stay":{
+    "stay":{
                 "title":"Your Stay With Us"
                },
-               "send":{
+    "send":{
                 "title":"book a table"
                },
-               "header-book":{
+    "header-book":{
                 "title":"book a table"
                },
-               "th-name":{
+    "th-name":{
                 "title":"Product Name"
                },
-               "th-Image":{
+    "th-Image":{
                 "title":"Product Image"
                },
-               "th-Description":{
+    "th-Description":{
                 "title":"Description"
                }, 
-               "th-Price":{
+    "th-Price":{
                 "title":"Price"
                },
-               "th-Quantity":{
+    "th-Quantity":{
                 "title":"Quantity"
                },
-               "th-Total":{
+    "th-Total":{
                 "title":"Total"
                },
-               "th-Action":{
+    "th-Action":{
                 "title":"Action"
                },
-               "Grand Total":{
+    "Grand Total":{
                 "title":"Grand Total"
-               }
-    
+               },
+            
+    "rounded-0 border-0":{
+                "modal-title":"Your Shopping Cart",
+                "table-product":"Product",
+                "table-Price":"Price",
+                "table-Quantity":"Quantity",
+                "table-Total":"Total",
+                "table-Actions":"Actions",
+                "btn bg-orange-back":"Back to Menu",
+                "btn bg-orange-add":"Add to cart"
+              },
+    "oder-component":{
+                "title":"Continue shopping",
+                "title1":"Shopping cart",
+                "title2":"you have",
+                "title3":"items in your cart",
+                "price":"price",
+                "sort":"Sort by",
+                "Paiement":"payment",
+                "accept":"We accept"
+
+             }
 }

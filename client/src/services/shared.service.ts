@@ -32,7 +32,6 @@ export class SharedService {
   }
 
 
-
   getAllCookies(): Product [] {
     const cookies: {[key: string]: string} = {};
     if (document.cookie !== '') {

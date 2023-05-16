@@ -136,7 +136,28 @@
            },
            "Grand Total":{
             "title":"Gesamtsumme"
-           }
+           },
+           "rounded-0 border-0":{
+             "modal-title":"Dein Einkaufswagen",
+             "table-product":"Produkt",
+             "table-Price":"Preis",
+             "table-Quantity":"Menge",
+             "table-Total":"Gesamt",
+             "table-Actions":"Aktionen",
+             "btn bg-orange-back":"Zurück zum Menü",
+             "btn bg-orange-add":"In den Warenkorb legen"
+
+           },
+           "oder-component":{
+            "title":"Mit dem Einkaufen fortfahren",
+            "title1":"Einkaufswagen",
+            "title2":"Haben Sie",
+            "title3":"Produkte in Ihrem Einkaufswagen",
+            "price":"Preis",
+            "sort":"Sortiere nach",
+            "Paiement":"Zahlung",
+            "accept":"Wir akzeptieren"
+         }
 
 }
 

@@ -1,38 +1,14 @@
-<div class="text-center spinner-position" *ngIf="!products">
+<div class="text-center spinner-position" *ngIf="!product">
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<!--
-<div class="card-deck">
- <div class="card-group">
-  <div class="card">
-            <a [href]='products.pictures' class="glightbox">
-                <img src="{{products.pictures}}" class="menu-img img-fluid" alt="">
-            </a>
-    <div class="card-body">
-      <div class="card-name font-weight-bold text-center">{{products.name}}</div>
-            <p class="ingredients">{{products.description}}</p>
-            <p class="price"> {{products.price }} €</p>
-    </div>
-    <div class="card-footer">
-        <div class="d-flex" (click)="fullSceenAction(content,products)">
-            <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
-            height="45px">
-            <p class="purchase-title">{{'cart.title' | translate}}</p>
-        </div>
-    </div>
-  </div>
-</div>
-</div>-->
-  
-    <!-- https://getbootstrap.com/docs/4.0/components/card/#card-decks -->
 
 <div class="card h-100 cursor-pointer m-6">
     <div class="menu-item">
         <div class="toHover">
-            <a [href]='products.pictures' class="glightbox">
-                <img src="{{products.pictures}}" class="menu-img img-fluid" alt="">
+            <a [href]='product.pictures' class="glightbox">
+                <img src="{{product.pictures}}" class="menu-img img-fluid" alt="">
             </a>
         </div>
     </div>
@@ -42,116 +18,87 @@
             <h6 class="ml-4 mr-4 mt-2 small-txt">{{'detail.title1' | translate}}</h6>
         </span>
         <div class="card-title">
-            <div class="card-name font-weight-bold text-center">{{products.name}}</div>
-            <p class="ingredients">{{products.description}}</p>
-            <p class="price"> {{products.price }} €</p>
+            <div class="card-name font-weight-bold text-center">{{product.name}}</div>
+            <p class="ingredients">{{product.description}}</p>
+            <p class="price"> {{product.price }} €</p>
         </div>
     </div>
     <div class="card-footer cart-btn  p-0">
-        <div class="d-flex" (click)="fullSceenAction(content,products)">
+        <div class="d-flex" (click)="fullSceenAction(cartModal,product)">
             <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
             height="45px">
             <p class="purchase-title">{{'cart.title' | translate}}</p>
         </div>
     </div>
 </div>
-<!-- </div> -->
-<ng-template #content let-modal class="rounded-0 border-0">
-    <div class="modal-body p-0 rounded-0 border-0">
-        <div class="container text-center ">
-            <div class="d-flex mt-2">
-                <h6 class="modal-name">{{products?.name}}</h6>
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-x m-1"
-                    (click)="modal.dismiss('Cross click')" class=" ml-auto cursor-pointer" viewBox="0 0 16 16">
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </div>
-            <hr>
-            
-            <div class="row mt-0">
-                <div class="col-md-5 border-right">
-                    <div class="row">
-                        <div class="col-ml-2">
-                            <img class="product-image" src="{{products?.pictures}}" alt="herbabio products"
-                                title="herbabio products" itemprop="image" height="auto" width="100%">
-                        </div>
-                        <div class="text-center">
-                            <p class=" price-modal text-center mt-3 font-weight-bold">{{products.price
-                                |currency:'EUR':true}}</p>
-                            <!-- <div class="text-left">Référence:<strong> {{products.reference}}</strong></div> -->
-                            <!-- <div class="d-flex">
-                                <div class="d-lg-block">
-                                    <p class="mb-0 text-left">Quantité</p>
-                                    <input class="iput-style mr-3"  type="number" [(ngModel)]="qte" name="qte" min="1">
-                                </div>
-                                <form class="d-inline-block  pt-4">
-                                    <div class="value-button mb-1 font-green3 cursor-pointer" (click)="increaseValue()"
-                                        value="Increase Value"><b>+</b>
-                                    </div>
-                                    <div class="value-button mb-2 font-green3 cursor-pointer pl-1"
-                                        (click)="decreaseValue()" value="Decrease Value"><b>-</b>
-                                    </div>
-                                </form>
-                            </div>-->
-                            &nbsp;
-                            <div class="d-flex">
-                                <input type="number" [(ngModel)]="inputedQuantity" name="qte" class="input-modal mr-3"   >
-                            </div>
-                            <small class="font-green3 text-left"min="1" *ngIf="inputedQuantity < 1"> können sie nicht - 
-                            </small>
-                        
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="menge-modal">
-                        <!--<div class="silver-color font-weight-bold h5 ml-2">Il y a {{itemNumber}} articles dans votre
-                            panier.</div>-->
-                            <!--<div class="d-flex justify-content-between mt-3 mb-3">
-                                <div class="font-weight-bold ml-2">{{'font-weight-bold.title' | translate}}:</div>
-                                <div class="font-weight-bold mr-2">{{products.price * this.qte |
-                                    currency:'DT':'symbol':'1.2-3':'fr'}}</div>
-                            </div>-->
 
-                        <div class="d-flex justify-content-between mb-3">
-                            <div class="qte font-weight-bold ml-2 ml-2">{{'qte.title' | translate}}:</div>
-                            <div class="font-weight-bold mr-2">{{inputedQuantity}}</div>
-                        </div>&nbsp;
-                        <!-- <div class="d-flex justify-content-between mb-3"
-                            *ngIf="products.price * this.qte > 60">
-                            <div class="ml-2 d-flex m-0">
-                                <p class="brown font-weight-bold m-0 mr-1">Livraison Gratuite</p>
-                                <p class="font-green3 font-weight-bold m-0 mr-1"> pour toute commande plus de</p>
-                                <p class="brown font-weight-bold m-0 mr-1">60 dt</p>
-                            </div>
-                        </div> -->
-                       <!-- <div class="d-flex justify-content-between mb-3 mt-4 image-background">
-                            <div class="font-weight-bold mt-2 mb-2 ml-2 ">TTC&nbsp;(tax incl.)= </div>
-                            {{products.price}} />
-                            <div class="font-weight-bold mt-2 mb-2 mr-2" >{{products.price * this.qte |
-                                currency:'DT':'symbol':'1.2-3':'fr'}}</div>
-                        </div>--> 
-                        <div class="d-flex justify-content-between mt-3 mb-3">
-                            <div class="font-weight-bold ml-2">{{'font-weight-bold.title' | translate}}:</div>
-                            <div class="font-weight-bold mr-2">{{products.price * this.inputedQuantity |
-                                currency:'EUR':true}}</div>
-                        </div>
-                        <div class="menge-modal">
-                            <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
-                                (click)="modal.dismiss('Cross click')">
-                                <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a href="#menu">back to menu</a></p>
-                            </button> &nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn rounded-pill text-white border-dark  text-uppercase m-1"
-                                (click)="modal.dismiss('Cross click');sendToCart(products)" >
-                                <p class="mt-1 mb-1 ml-3 mr-3 cursor-pointer text-dark "><a routerLink="/order">purchase</a></p>
-                               
-                            </button>
+<ng-template #cartModal let-modal class="rounded-0 border-0">
+    <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">
+            <!--Your Shopping Cart-->
+            {{'rounded-0 border-0.modal-title' | translate}}
+        </h5>
+        <button type="button" class="bg-orange" 
+                 aria-label="Close">
+            <span aria-hidden="true" (click)="modal.dismiss('Cross click')">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-image">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col" class="table-product"> {{'rounded-0 border-0.table-product' | translate}}</th>
+                <th scope="col"  class="table-Price"> {{'rounded-0 border-0.table-Price' | translate}}</th>
+                <th scope="col-4"class="table-Quantity"> {{'rounded-0 border-0.table-Quantity' | translate}}</th>
+                <th scope="col"class="table-Total"> {{'rounded-0 border-0.table-Total' | translate}}</th>
+                <th scope="col"class="table-Actions"> {{'rounded-0 border-0.table-Actions' | translate}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="w-25">
+                    <div class="menu-item">
+                        <div class="toHover">
+                            <a [href]='product.pictures' class="glightbox">
+                                <img src="{{product.pictures}}" class="menu-img img-fluid" alt="">
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <br><br>
+                </td>
+                <td>{{product.name}}</td>
+                <td>{{product.price |currency:'EUR':true }}</td>
+                <td>
+                    <div class="d-flex align-items-end" >
+                        <button class="btn btn-link px-2"
+                        (click)="increaseValue()">
+                        <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="text" class="form-control  text-center" [(ngModel)]="inputedQuantity" id="input1" value="2">
+                        <button class="btn btn-link px-2"
+                                (click)="increaseValue()">
+                                <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                <td>{{product.total |currency:'EUR':true}}</td>
+                <td>
+                <a href="#" class="">
+                    <i class="fas fa-trash"></i>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table> 
+        <div class="d-flex justify-content-end">
+            <p class="price grey-txt">Total <span class="price grey-txt">{{product.price |currency:'EUR':true}} </span></p>
         </div>
+    </div>
+    <div class="modal-footer border-top-0 d-flex justify-content-between">
+        <button type="button" class="btn bg-orange-back " (click)="modal.dismiss('Cross click')">{{'rounded-0 border-0.btn bg-orange-back'| translate}}</button>
+        <button type="button" class="btn bg-orange-add " (click)="modal.dismiss('Cross click');
+            sendToCart(product)">
+            {{'rounded-0 border-0.btn bg-orange-add'| translate}}
+        </button>
     </div>
 </ng-template>

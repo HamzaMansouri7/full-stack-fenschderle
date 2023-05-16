@@ -97,4 +97,50 @@
 }
 
 
+.container {
+  padding: 2rem 0rem;
+}
 
+.table-image {
+  
+  thead {
+    td, th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
+  
+  td, th {
+    vertical-align: middle;
+    text-align: center;
+    
+    &.qty {
+      max-width: 2rem;
+    }
+  }
+}
+
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+a i.fas.fa-trash {
+  color: black; /* set default color to black */
+}
+
+a:hover i.fas.fa-trash {
+  color: #F6CA67; /* set hover color to #F6CA67 */
+}
+.grey-txt {
+  color: #647267;
+  font-size: 18px;
+  font-weight: 500;
+}
+input {
+  width: 6vw;
+}

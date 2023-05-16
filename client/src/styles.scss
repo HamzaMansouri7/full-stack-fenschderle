@@ -1,3 +1,4 @@
+// @import '~@fortawesome/fontawesome-free/css/all.css';
 
 .container{
     max-width: 1200px;
@@ -85,5 +86,18 @@
   .bg-light-color{
     background-color: #f6f6f6;
   }
-  
+
+  .bg-image{
+    background-image: url(/client/src/assets/img/pizza.jpg);
+  }
+
+  .bg-orange{
+    background-color: #F6CA67 !important;    
+  }
+
+
+
+  a:hover i {
+    color:  #F6CA67;
+  }
   

@@ -14,6 +14,8 @@ import { EventsComponent } from './events.component';
     CommonModule,
     EventsRoutingModule ,
     TranslateModule.forChild()
-  ]
+  ],
+  exports:[EventsComponent]
+
 })
 export class EventsModule { }
