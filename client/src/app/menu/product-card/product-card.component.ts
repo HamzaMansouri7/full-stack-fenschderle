@@ -26,9 +26,9 @@ export class ProductCardComponent  {
   }
   fullSceenAction(cartModal: any,product:Product) {
     this.modalService.open(cartModal, { size: 'lg',centered: true});
-    this.getOldData()
+    // this.getOldData()
     this.verifOldQuantity(product);
-    this.inputedQuantity=1
+    // this.inputedQuantity=1
   }
 
   verifOldQuantity(product:any) {
@@ -36,7 +36,7 @@ export class ProductCardComponent  {
       this.productArray.forEach((element:any) => {
           if(element.id==product.id){
             this.oldQte=element.quantity
-
+            this.inputedQuantity=this.oldQte;
           }
       });
     }
@@ -46,7 +46,8 @@ export class ProductCardComponent  {
     this.product.quantity = this.inputedQuantity;
     const UpdatedProduct =  {...product , totProdPrice:   product.price * this.inputedQuantity  }
     this.cartService.addProduct(UpdatedProduct);
-    this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0
+    this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0;
+    // this.router.navigate['/order'];
   }
 
   increaseValue() {
@@ -59,22 +60,9 @@ export class ProductCardComponent  {
 
   }
   getOldData(){
-    // this.productArray = this.cartService.getProductCart()
     this.productArray = this.sharedService.getAllCookies();
-
-    // if (this.productArray?.length < 1) {
-    //   let cookie: any
-    //   cookie = this.sharedService.getAllCookies()
-    //   Object.entries(cookie).forEach(([key, val]) => {
-    //     var element = JSON.stringify(val);
-    //     if (element.length > 1000) {
-    //       var parsed = JSON.parse(JSON.parse(element));
-    //       this.productArray.push(parsed)
-    //     }
-    //   }
-    //   );
-    // }
     this.itemNumber = this.sharedService.cartItemNumber(this.productArray);
+    // this.inputedQuantity = this.itemNumber;
     console.log('itemNumber',this.itemNumber);
   }
 
@@ -87,7 +75,7 @@ export class ProductCardComponent  {
     if (this.inputedQuantity > 1) {
       alert("Quantity must be at least 1");
     } else {
-      // Perform other actions if quantity is valid
+      return;
     }
   }
   

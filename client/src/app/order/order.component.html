@@ -1,4 +1,4 @@
-<section class="" style="background-color: #eee;">
+<section class="oder-component" style="background-color: #eee;">
   <div class="container py-5 h-100 pb-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="card">
@@ -6,16 +6,16 @@
             <div class="row">
               <div class="col-lg-8">
                 <h5 class="mb-3"><a routerLink="/home" class="text-body"><i
-                      class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                      class="fas fa-long-arrow-alt-left me-2 title"></i>{{'oder-component.title' | translate}}</a></h5>
                 <hr>
                 <div class="d-flex justify-content-between align-items-center mb-4">
                   <div *ngIf="products.length">
-                    <p class="mb-1">Shopping cart</p>
-                    <p class="mb-0">You have {{products.length}} items in your cart</p>
+                    <p class="mb-1 title1">{{'oder-component.title1' | translate}}</p>
+                    <p class="mb-0 title2">{{'oder-component.title2' | translate}}</p> {{products.length}}<p class="title3">{{'oder-component.title3' | translate}}</p>
                   </div>
                   <div>
-                    <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
-                        class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
+                    <p class="mb-0"><span class="text-muted sort">{{'oder-component.sort' | translate}}:</span> <a href="#!"
+                        class="text-body price"> {{'oder-component.price' | translate}}<i class="fas fa-angle-down mt-1"></i></a></p>
                   </div>
                 </div>
                 <div class="card mb-3" *ngFor="let item of products">
@@ -52,10 +52,10 @@
                 <div class="card bg-paiement text-white rounded-3">
                   <div class="card-body" *ngIf="products.length">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                      <h5 class="mb-0">Paiement</h5>
+                      <h5 class="mb-0 Paiement">{{'oder-component.Paiement' | translate}}</h5>
                         <span id="boot-icon" class="bi bi-cart-check-fill" style="font-size: 1.5rem; color: #F6CA67 ;"><p style="font-size: 15px; color: #F6CA67 " class="badge">{{products.length}}</p></span>
                     </div>
-                    <p class="small mb-2">We accept</p>
+                    <p class="small mb-2 accept">{{'oder-component.Paiement' | translate}}</p>
                     <a href="#!" type="submit" class="text-white"><i
                         class="fab fa-cc-mastercard fa-2x me-2"></i></a>
                     <a href="#!" type="submit" class="text-white"><i
@@ -119,7 +119,7 @@
                       </div>
                     </button>
                   </div>
-                  <div class="card-body" *ngIf="!products.length">
+                  <!--<div class="card-body" *ngIf="!products.length">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                       <h5 class="mb-0">Paiement</h5>
                         <span id="boot-icon" * class="bi bi-cart-check-fill" style="font-size: 1.5rem; color: #F6CA67 ;"><p style="font-size: 15px; color: #F6CA67 " class="badge">{{products.length}}</p></span>
@@ -140,7 +140,7 @@
                           <h1>Fenschderle<span>.</span></h1>
                        </a>
                     </button>
-                  </div>
+                  </div>..-->
                 </div>
               </div>
             </div>
