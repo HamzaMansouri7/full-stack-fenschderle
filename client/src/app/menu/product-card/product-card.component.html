@@ -95,9 +95,10 @@
         </div>
     </div>
     <div class="modal-footer border-top-0 d-flex justify-content-between">
-        <button type="button" class="btn bg-orange-back " (click)="modal.dismiss('Cross click')">{{'rounded-0 border-0.btn bg-orange-back'| translate}}</button>
-        <button type="button" class="btn bg-orange-add " (click)="modal.dismiss('Cross click');
-            sendToCart(product)">
+        <button type="button" class="btn bg-orange " (click)="modal.dismiss('Cross click')" [routerLink]="'/menu'">{{'rounded-0 border-0.btn bg-orang'| translate}}</button>
+        <button type="button" class="btn bg-orange " (click)="modal.dismiss('Cross click');
+            sendToCart(product)"
+            [routerLink]="'/order'">
             {{'rounded-0 border-0.btn bg-orange-add'| translate}}
         </button>
     </div>

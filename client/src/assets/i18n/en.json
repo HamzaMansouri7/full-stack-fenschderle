@@ -145,7 +145,7 @@
                 "table-Total":"Total",
                 "table-Actions":"Actions",
                 "btn bg-orange-back":"Back to Menu",
-                "btn bg-orange-add":"Add to cart"
+                "btn_add_to_cart":"Add to cart"
               },
     "oder-component":{
                 "title":"Continue shopping",
