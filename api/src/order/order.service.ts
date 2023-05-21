@@ -15,6 +15,7 @@ export class OrderService {
     private readonly orderRepository: Repository<Order>,
     @Inject (STRIPE_CLIENT) private stripe:Stripe,
   ) {
+    this.stripe = new Stripe(process.env.STRIPE_KEY, { apiVersion: '2022-11-15' });
   }
 
   async findAll(): Promise<Order[]> {
@@ -26,7 +27,7 @@ export class OrderService {
   }
 
   async passNewOrder(body: any) {
-    const order: any =  this.orderRepository.create(body);
+    const order: any = this.orderRepository.create(body);
   
     try {
       // Make a payment with Stripe
@@ -42,9 +43,15 @@ export class OrderService {
   
       // Update the order with the payment status
       order.paymentState = paymentIntent.status;
+      console.log('paymentIntent.status',paymentIntent.status);
   
-      // Save the order to the database
-      return await this.orderRepository.save(order);
+      if (paymentIntent.status === 'succeeded') {
+        // Payment is successful, save the order to the database
+        return await this.orderRepository.save(order);
+      } else {
+        // Payment failed, throw an error
+        throw new Error('Payment failed. Please try again.');
+      }
     } catch (error) {
       // Handle any errors that occur during payment processing
       // You can customize the error handling based on your requirements
@@ -52,6 +59,7 @@ export class OrderService {
       throw new Error('Payment failed. Please try again.');
     }
   }
+  
   
   
 }

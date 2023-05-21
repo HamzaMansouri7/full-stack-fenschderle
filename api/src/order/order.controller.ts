@@ -31,6 +31,8 @@ export class OrderController {
 
   @Post('/newOrder')
   createOrder(@Body() orderData: CreateOrderDto) {
+    console.log('orderData',orderData);
+    // ok good result concat orderData and  body and build final body 
     const body: CreateOrderDto = {
       customerName: "John Doe",
       customerAddress: "123 Main St",
@@ -80,7 +82,7 @@ export class OrderController {
     };
     
       
-    return this.orderService.passNewOrder(body);
+    // return this.orderService.passNewOrder(body);
   }
 
 
