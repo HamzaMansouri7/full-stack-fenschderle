@@ -1,10 +1,21 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Pizza } from "src/pizza/entities/pizza.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Size {
     @PrimaryGeneratedColumn({ type: "integer", name: "id" })
     id: number;
-  
+    
+    
+    @ApiProperty()
+    @Column("text", { name: "name", nullable: false })
+    name: string;
+   
+   
+    @ApiProperty()
+    @Column("text", { name: "value", nullable: false })
+    value: string;
+
     @ApiProperty()
     @Column("text", { name: "description", nullable: false})
     description: string | null;
@@ -28,4 +39,9 @@ export class Size {
     @ApiProperty()
     @Column("integer", { name: "updatedby", nullable: true })
     updatedBy: number | null;
+    
+    @ApiProperty({ type: () => Pizza, isArray: true })
+    @OneToMany(() => Pizza, pizza => pizza.size)
+    pizzas: Pizza[];
+    
 }

@@ -16,7 +16,7 @@ export class UpdatePayementDto extends PartialType(CreatePayementDto) {
    // paymentIntentId: string;
 
     @ApiProperty()
-    status: string;
+    // status: string;
 
     @ApiProperty()
     orderId: number;

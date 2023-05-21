@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Order } from "src/order/entities/order.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Snack {
     @ApiProperty()
@@ -41,4 +42,9 @@ export class Snack {
     @ApiProperty()
     @Column("integer", { name: "updatedby", nullable: true })
     updatedBy: number | null;
+
+    @ApiProperty({ type: () => Order })
+    @ManyToOne(() => Order, order => order.snacks)
+    order: Order;
+  
 }

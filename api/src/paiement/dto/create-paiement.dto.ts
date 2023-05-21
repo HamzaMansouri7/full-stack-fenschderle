@@ -14,7 +14,7 @@ export class CreatePayementDto {
         //paymentIntentId: string;
 
         @ApiProperty()
-        status: string;
+        // status: string;
 
         @ApiProperty()
         orderId: number;

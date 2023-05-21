@@ -1,58 +1,59 @@
- import { ApiProperty } from "@nestjs/swagger";
-import { Pasta } from "src/pasta/entities/pasta.entity";
- import { Pizza } from "src/pizza/entities/pizza.entity";
- import { Salat } from "src/salat/entities/salat.entity";
- import { Schnitzel } from "src/schnitzel/entities/schnitzel.entity";
- import { Snack } from "src/snacks/entities/snack.entity";
+import { ApiProperty } from '@nestjs/swagger';
+import { Pasta } from 'src/pasta/entities/pasta.entity';
+import { Pizza } from 'src/pizza/entities/pizza.entity';
+import { Salat } from 'src/salat/entities/salat.entity';
+import { Schnitzel } from 'src/schnitzel/entities/schnitzel.entity';
+import { Snack } from 'src/snacks/entities/snack.entity';
 
- export class CreateOrderDto {
-    
-    @ApiProperty()
-   customerName: string;
- 
+export class CreateOrderDto {
+  @ApiProperty()
+  customerName: string;
 
-   @ApiProperty()
-   customerAddress: string;
+  @ApiProperty()
+  customerAddress: string;
 
-   @ApiProperty()
-   totalPrice: number;
+  @ApiProperty()
+  totalPrice: number;
 
-   @ApiProperty()
+  @ApiProperty()
   isDelivered: boolean;
 
   @ApiProperty()
-   paymentState: string;
-   @ApiProperty()
-   quantity : number;
+  paymentState: string; // Update the type to string
 
-   @ApiProperty()
-   pasta: Pasta;
+  @ApiProperty()
+  quantity: number;
 
-   @ApiProperty()
-   pizza: Pizza;
+  @ApiProperty()
+  pasta: Pasta[];
 
-   @ApiProperty()
-   snack: Snack;
+  @ApiProperty()
+  pizza: Pizza[];
 
-   @ApiProperty()
-   salad: Salat;
+  @ApiProperty()
+  snack: Snack[];
 
-   @ApiProperty()
-   schnitzel: Schnitzel;
-     payments: any;
-     
-    @ApiProperty()
-    isDeleted?: number;
+  @ApiProperty()
+  salad: Salat[];
 
-    @ApiProperty()
-    createdAt?: Date;
+  @ApiProperty()
+  schnitzel: Schnitzel[];
 
-    @ApiProperty()
-    createdBy?: number;
+  @ApiProperty()
+  payments: any;
 
-    @ApiProperty()
-    updatedAt?: Date;
+  @ApiProperty()
+  isDeleted?: number;
 
-    @ApiProperty()
-    updatedBy?: number;
- }
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  createdBy?: number;
+
+  @ApiProperty()
+  updatedAt?: Date;
+
+  @ApiProperty()
+  updatedBy?: number;
+}

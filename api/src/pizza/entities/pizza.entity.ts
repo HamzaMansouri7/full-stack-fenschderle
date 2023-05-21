@@ -1,5 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { Order } from "src/order/entities/order.entity";
+import { Size } from "src/size/entities/size.entity";
 import { BeforeInsert, BeforeUpdate, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+
+
 @Entity()
 export class Pizza {
 
@@ -9,37 +13,45 @@ export class Pizza {
 
   @ApiProperty()
   @Column("text", { name: "name", nullable: true})
-  name: string | null;
+  name?: string | null;
 
   @ApiProperty()
   @Column("text", { name: "description", nullable: true })
-  description: string | null;
+  description?: string | null;
 
   @ApiProperty()
   @Column("double precision", { name: "totalprice", nullable: true, default: 0 })
-  price: number | null;
+  price?: number | null;
 
   @ApiProperty()
   @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
-  discount: number | null;
+  discount?: number | null;
 
   @ApiProperty()
   @Column("boolean", { name: "isdeleted", nullable: true, default: false })
-  isDeleted: boolean | null;
+  isDeleted?: boolean | null;
 
   @ApiProperty()
   @Column("timestamp with time zone", { name: "createdat", nullable: true })
-  createdAt: Date | null;
+  createdAt?: Date | null;
 
   @ApiProperty()
   @Column("integer", { name: "createdby", nullable: true })
-  createdBy: number | null;
+  createdBy?: number | null;
 
   @ApiProperty()
   @Column("timestamp with time zone", { name: "updatedat", nullable: true })
-  updatedAt: Date | null;
+  updatedAt?: Date | null;
 
   @ApiProperty()
   @Column("integer", { name: "updatedby", nullable: true })
-  updatedBy: number | null;
+  updatedBy?: number | null;
+
+  @ApiProperty({ type: () => Size })
+  @ManyToOne(() => Size, size => size.pizzas)
+  size: Size;
+
+  @ApiProperty({ type: () => Order })
+  @ManyToOne(() => Order, order => order.pizzas)
+  order?: Order;
 }

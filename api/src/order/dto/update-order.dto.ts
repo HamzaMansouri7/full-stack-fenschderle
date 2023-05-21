@@ -1,4 +1,4 @@
- import { PartialType } from '@nestjs/mapped-types';
+import { PartialType } from '@nestjs/mapped-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Pasta } from 'src/pasta/entities/pasta.entity';
 import { Pizza } from 'src/pizza/entities/pizza.entity';
@@ -7,54 +7,66 @@ import { Schnitzel } from 'src/schnitzel/entities/schnitzel.entity';
 import { Snack } from 'src/snacks/entities/snack.entity';
 import { CreateOrderDto } from './create-order.dto';
 
- export class UpdateOrderDto extends PartialType(CreateOrderDto) {
-       
-    @ApiProperty()
-   customerName: string;
- 
+export class UpdateOrderDto extends PartialType(CreateOrderDto) {
+  @ApiProperty()
+  customerName: string;
 
-   @ApiProperty()
-   customerAddress: string;
+  @ApiProperty()
+  customerAddress: string;
 
-   @ApiProperty()
-   totalPrice: number;
+  @ApiProperty()
+  totalPrice: number;
 
-   @ApiProperty()
+  @ApiProperty()
   isDelivered: boolean;
 
   @ApiProperty()
-   paymentState: string;
-   @ApiProperty()
-   quantity : number;
+  paymentState: 'pending' | 'completed' | 'failed' | 'canceled'; // Use a specific type or enum for payment state
 
-   @ApiProperty()
-   pasta: Pasta;
+  @ApiProperty()
+  quantity: number;
 
-   @ApiProperty()
-   pizza: Pizza;
+  @ApiProperty()
+  pasta?: Pasta[];
 
-   @ApiProperty()
-   snack: Snack;
+  @ApiProperty()
+  pizza: Pizza[];
 
-   @ApiProperty()
-   salad: Salat;
+  @ApiProperty()
+  snack: Snack[];
 
-   @ApiProperty()
-   schnitzel: Schnitzel;
-     payments: any;
-     
-    @ApiProperty()
-    isDeleted?: number;
+  @ApiProperty()
+  salad: Salat[];
 
-    @ApiProperty()
-    createdAt?: Date;
+  @ApiProperty()
+  schnitzel: Schnitzel[];
 
-    @ApiProperty()
-    createdBy?: number;
+  @ApiProperty()
+  payments: {
+    amount: number;
+    currency: string;
+    description: string;
+    payment_method: string;
+    statement_descriptor: string;
+    metadata: {
+      orderId: string;
+      customerName: string;
+    };
+    receipt_email: string;
+  };
 
-    @ApiProperty()
-    updatedAt?: Date;
+  @ApiProperty()
+  isDeleted?: number;
 
-    @ApiProperty()
-    updatedBy?: number;
- }
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  createdBy?: number;
+
+  @ApiProperty()
+  updatedAt?: Date;
+
+  @ApiProperty()
+  updatedBy?: number;
+}
