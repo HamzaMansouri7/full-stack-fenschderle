@@ -15,7 +15,7 @@ export class OrderService {
     return this.http.post(`${environment.backend_root}/order/newOrder`, order);
   }
 
-  addOrder(order: Order) {
+  addOrder(order: any) {
     return this.http.post(`${environment.backend_root}/order/newOrder`, order);
   }
 }

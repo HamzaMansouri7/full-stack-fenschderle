@@ -20,10 +20,6 @@ export class Salat {
   price: number | null;
 
   @ApiProperty()
-  @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
-  discount: number | null;
-
-  @ApiProperty()
   @Column("boolean", { name: "isdeleted", nullable: true, default: false })
   isDeleted: boolean | null;
 
