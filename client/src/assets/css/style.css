@@ -361,6 +361,7 @@ section {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
+
   }
 
   .navbar>ul>li>a:before {
@@ -1211,9 +1212,11 @@ section {
 # Book A Table Section
 --------------------------------------------------------------*/
 .book-a-table .reservation-img {
+  background-image: url("../img/Book-A-Table.jpg");
   min-height: 500px;
   background-size: cover;
   background-position: center;
+  border-radius: 1rem;
 }
 
 .book-a-table .reservation-form-bg {
@@ -1390,7 +1393,8 @@ section {
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
-  background: #f4f4f4;
+  background: transparent;
+  box-shadow: 10px 8px 23px #fff;
   padding: 30px;
   height: 100%;
 }
