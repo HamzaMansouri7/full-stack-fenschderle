@@ -12,7 +12,7 @@ export class PizzaController {
     return this.pizzaService.create(createPizzaDto);
   }
 
-  @Get()
+  @Get( '/getpizzaList')
   findAll() {
     return this.pizzaService.findAll();
   }

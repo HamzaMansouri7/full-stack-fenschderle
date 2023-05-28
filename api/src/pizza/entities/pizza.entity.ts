@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Order } from "src/order/entities/order.entity";
 import { Size } from "src/size/entities/size.entity";
-import { BeforeInsert, BeforeUpdate, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -22,6 +22,10 @@ export class Pizza {
   @ApiProperty()
   @Column("double precision", { name: "totalprice", nullable: true, default: 0 })
   price?: number | null;
+
+  @ApiProperty()
+  @Column("text", { name: "pictureUrl", nullable: true })
+  pictureUrl?: string | null;
 
   @ApiProperty()
   @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
@@ -48,8 +52,8 @@ export class Pizza {
   updatedBy?: number | null;
 
   @ApiProperty({ type: () => Size })
-  @ManyToOne(() => Size, size => size.pizzas)
-  size: Size;
+  @ManyToOne(() => Size, { eager: true }) // Use eager loading if necessary
+  sizeId: Size;
 
   @ApiProperty({ type: () => Order })
   @ManyToOne(() => Order, order => order.pizzas)

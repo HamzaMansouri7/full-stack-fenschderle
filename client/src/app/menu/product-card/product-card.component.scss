@@ -33,9 +33,14 @@
     margin: 0 auto .9375rem;
   }
 
-  :host::ng-deep .card,.btn{
-    border-radius: 0rem;
+  :host::ng-deep .card{
+    border-radius: 1rem;
     box-shadow: none;
+    box-shadow: 18px -14px 45px black;
+    background-color: transparent;
+  }
+  :host::ng-deep .card:hover{
+    box-shadow: 0px -4px 12px #ffc107;
   }
   @media (max-width:425px) {
     ::ng-deep  .modal-content {
@@ -60,16 +65,18 @@
     text-align: center; 
 }
 .card-name{
-  color: rgb(0, 45, 128);
+  color: #ffc107c2;
   display: flex;
+  font-family: var(--font-secondary);
   justify-content: center;
+  font-size: larger;
   
 }
-.purchase-title{
-  margin-left: 25%;
-  margin-top: 1%;
-  font-size: 2em;
-}
+// .purchase-title{
+//   margin-left: 25%;
+//   margin-top: 1%;
+//   font-size: 2em;
+// }
 
 .modal-name{
   display: flex;
@@ -143,4 +150,26 @@ a:hover i.fas.fa-trash {
 }
 input {
   width: 6vw;
+}
+
+.bg-card-footer{
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.size-icon{
+  font-size: medium;
+}
+.pic-card{
+  width: 100%;
+  height: 50%;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+::ng-deep .menu .tab-content .menu-item .menu-img{
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }

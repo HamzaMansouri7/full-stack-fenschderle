@@ -7,28 +7,25 @@
 <div class="card h-100 cursor-pointer m-6">
     <div class="menu-item">
         <div class="toHover">
-            <a [href]='product.pictures' class="glightbox">
-                <img src="{{product.pictures}}" class="menu-img img-fluid" alt="">
+            <a [href]='product.pictures' >
+                <img class="pic-card" src="https://res.cloudinary.com/dz5mp3a6n/image/upload/v1685148935/menu-item-3_smfe5f.png"  alt="">
             </a>
         </div>
     </div>
 
     <div class="card-body pt-3 pb-0 mt-15 cursor-pointer">
-        <span class="span-bg ml-3 text-white span-detail cursor-pointer">
+        <!-- <span class="span-bg ml-3 text-white span-detail cursor-pointer">
             <h6 class="ml-4 mr-4 mt-2 small-txt">{{'detail.title1' | translate}}</h6>
-        </span>
+        </span> -->
         <div class="card-title">
             <div class="card-name font-weight-bold text-center">{{product.name}}</div>
             <p class="ingredients">{{product.description}}</p>
-            <p class="price"> {{product.price }} €</p>
+            <p class="price"> {{product.price | currency:'EUR':'symbol':'1.2-2'}} </p>
         </div>
     </div>
-    <div class="card-footer cart-btn  p-0">
-        <div class="d-flex" (click)="fullSceenAction(cartModal,product)">
-            <img src="assets/img/menu/cart-fill.svg" alt="" class="mt-2 ml-2" width="35px" 
-            height="45px">
-            <p class="purchase-title">{{'cart.title' | translate}}</p>
-        </div>
+    <div class="card-footer bg-card-footer bg-orange d-flex align-items-baseline justify-content-center">
+        <span class="fa-solid fa-cart-shopping size-icon pr-2" ></span>
+        <h4 class="purchase-title pt-1">{{'cart.title' | translate}}</h4>
     </div>
 </div>
 

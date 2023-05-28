@@ -1,23 +1,26 @@
 <section id="menu" class="menu page-break bg-menu">
    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-         <h2>{{'h2.title1' | translate}}</h2>
+      <div class="section-header mt-3 text-white">
+         <!-- <h2>{{'h2.title1' | translate}}</h2> -->
          <p class="p11">{{'p11.title1' | translate}} <span class="span">{{'span.title1' | translate}}</span></p>
       </div>
-      <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+      <ul class="nav nav-tabs d-flex justify-content-center pb-5" data-aos="fade-up" data-aos-delay="200">
          <li class="nav-item" *ngFor="let food of menuArray">
-            <a class="nav-link" [class.active]="food.isShown" [class.show]="food.isShown" data-bs-toggle="tab"
+            <a class="nav-link"
+             [class.active]="food.isShown"
+             [class.show]="food.isShown"
+             data-bs-toggle="tab"
                [href]="'#'+food.id">
                <h4>{{food.foodName}}</h4>
             </a>
          </li>
       </ul>
-      <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
-         <div class="tab-pane fade active show" id="menu-starters">
-            <div class="tab-header text-center">
-               <p>Menu</p>
+      <div class="tab-content pt-5 " data-aos="fade-up" data-aos-delay="300">
+         <div class="tab-pane fade active  show" id="menu-starters">
+            <!-- <div class="tab-header text-center">
+               <h4 class="text-white pb-1">Menu</h4>
                <h3>Pasta</h3>
-            </div>
+            </div> -->
             <div class="row">
                <div class="col-lg-4 col-md-6 col-sm-12 col-xl-3 mb-3 menu-item" *ngFor="let item of pastaArray">
                   <app-product-card [product]="item"></app-product-card>
@@ -26,10 +29,10 @@
          </div>
 
          <div class="tab-pane fade " id="menu-breakfast">
-            <div class="tab-header text-center">
-               <p>Menu</p>
+            <!-- <div class="tab-header text-center">
+               <h4 class="text-white pb-1">Menu</h4>
                <h3>Schnitzel</h3>
-            </div>
+            </div> -->
             <div class="row">
                <div class="col-lg-4 col-md-6 col-sm-1 col-xl-3 mb-3 menu-item" *ngFor="let item of schnitzelArray">
                   <app-product-card [product]="item"></app-product-card>
@@ -38,10 +41,10 @@
          </div>
 
          <div class="tab-pane fade " id="menu-lunch">
-            <div class="tab-header text-center">
-               <p>Menu</p>
+            <!-- <div class="tab-header text-center">
+               <h4 class="text-white pb-1">Menu</h4>
                <h3>Snack´s</h3>
-            </div>
+            </div> -->
             <div class="row">
                <div class="col-lg-4 col-md-6 col-sm-1 col-xl-3 mb-3 menu-item" *ngFor="let item of SnacksArray">
                   <app-product-card [product]="item"></app-product-card>
@@ -50,10 +53,10 @@
          </div>
 
          <div class="tab-pane fade " id="menu-dinner">
-            <div class="tab-header text-center">
-               <p>Menu</p>
+            <!-- <div class="tab-header text-center">
+               <h4 class="text-white pb-1">Menu</h4>
                <h3>Pizza</h3>
-            </div>
+            </div> -->
             <div class="row">
                <div class="col-lg-4 col-md-6 col-sm-1 col-xl-3 mb-3 menu-item" *ngFor="let item of pizzaArray">
                   <app-product-card [product]="item"></app-product-card>
@@ -62,10 +65,10 @@
          </div>
 
          <div class="tab-pane fade " id="menu-salat">
-            <div class="tab-header text-center">
-               <p>Menu</p>
+            <!-- <div class="tab-header text-center">
+               <h4 class="text-white pb-1">Menu</h4>
                <h3>Salat</h3>
-            </div>
+            </div> -->
             <div class="row">
                <div class="col-lg-4 col-md-6 col-sm-1 col-xl-3 mb-3 menu-item" *ngFor="let item of salatArray">
                   <app-product-card [product]="item"></app-product-card>

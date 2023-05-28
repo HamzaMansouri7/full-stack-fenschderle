@@ -46,21 +46,21 @@ export class OrderController {
           // Pizza details for the first pizza
           id: 1,
           name: "Margherita",
-          size: null,
+          sizeId: null,
           price: 799,
         },
         {
           // Pizza details for the second pizza
           id: 2,
           name: "Pepperoni",
-          size: null,
+          sizeId: null,
           price: 999,
         },
         {
           // Pizza details for the third pizza
           id: 3,
           name: "Vegetarian",
-          size: null,
+          sizeId: null,
           price: 699,
         },
       ],

@@ -8,9 +8,11 @@ export class SizeController {
   constructor(private readonly sizeService: SizeService) {}
 
   @Post()
-  create(@Body() createSizeDto: CreateSizeDto) {
+  create(@Body() createSizeDto: any) {
     return this.sizeService.create(createSizeDto);
   }
+
+  
 
   @Get()
   findAll() {

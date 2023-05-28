@@ -12,14 +12,25 @@ export class SizeService {
     @InjectRepository(Size)
     private readonly SizeRepository: Repository<Size>,
   ) { }
+
+
   async create(sizeBody: any) {
-    let newpasta = this.SizeRepository.create(sizeBody);
-    const newsize = {...sizeBody, createdAt : new Date()};
-    return await this.SizeRepository.save(newpasta) ;
+    const newsize = this.SizeRepository.create(sizeBody);
+    return await this.SizeRepository.save(newsize) ;
   }
+  // async create(pizzaBody: any) {
+  //   const newPizza = this.pizzaRepository.create(pizzaBody);
+  //   return await this.pizzaRepository.save(newPizza) ;
+  // }
+  
+
+
+
   async findAll(): Promise<Size[]> {
     return this.sizeRepository.find();
   }
+
+
 
   async findOne(id: any): Promise<Size> {
     const size = await this.sizeRepository.findOne(id);
@@ -28,6 +39,7 @@ export class SizeService {
     }
     return size;
   }
+
 
   async patch(id: any, updatesizeDto: UpdateSizeDto) {
     const Size = await this.sizeRepository.findOne({where : {id:id}});
@@ -38,6 +50,8 @@ export class SizeService {
     await this.sizeRepository.save(Size);
     return Size;
   }
+
+
   async remove(id: number) {
     await this.sizeRepository.patch(id,{isDeleted : true});
   }

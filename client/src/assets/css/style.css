@@ -78,7 +78,7 @@ section {
 
 .section-header p {
   margin: 0;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 400;
   /*font-family: var(--font-primary);*/
 }
@@ -262,7 +262,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #F6CA67 ;
 }
 
 @media (max-width: 575px) {
@@ -272,8 +272,7 @@ section {
 }
 
 .header.sticked {
-  border-color: #fff;
-  border-color: #eee;
+
 }
 
 .header .logo img {
@@ -284,13 +283,16 @@ section {
 .header .logo h1 {
   font-size: 28px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
+  text-shadow: 4px 5px 5px #fff;
   margin: 0;
   font-family: var(--font-secondary);
 }
 
 .header .logo h1 span {
   color: var(--color-primary);
+  text-shadow: 4px 5px 5px var(--color-primary);
+
 }
 
 .header .btn-book-a-table,
@@ -346,9 +348,9 @@ section {
     justify-content: space-between;
     padding: 0 3px;
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 600;
-    color: #7f7f90;
+    color: #fff;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -368,7 +370,7 @@ section {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--color-primary);
+    background-color: #F6CA67;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -884,7 +886,7 @@ section {
 }
 
 .menu .nav-link h4 {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 400;
   margin: 0;
   font-family: var(--font-secondary);
@@ -901,8 +903,7 @@ section {
 }
 
 .menu .nav-link.active {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  border-color: transparent;
 }
 
 .menu .tab-content .tab-header {
@@ -942,16 +943,17 @@ section {
 }
 
 .menu .tab-content .menu-item .ingredients {
-  font-family: var(--font-secondary);
-  color: #8d8d9b;
-  margin-bottom: 5px;
+     font-family: var(--font-secondary);
+    color: #dfd5b2bd;
+    margin-bottom: 5px;
+
 }
 
 .menu .tab-content .menu-item .price {
  
   font-size: 24px;
   font-weight: 700;
-  color: rgb(82, 146, 57)
+  color: #ffc107;
 }
 
 /*--------------------------------------------------------------

@@ -12,7 +12,7 @@ export class PastaController {
     return this.pastaService.create(createPastaDto);
   }
 
-  @Get()
+  @Get( '/getPastaList')
   findAll() {
     return this.pastaService.findAll();
   }
