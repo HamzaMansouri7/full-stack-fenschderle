@@ -27,9 +27,9 @@ export class Pizza {
   @Column("text", { name: "pictureUrl", nullable: true })
   pictureUrl?: string | null;
 
-  @ApiProperty()
-  @Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
-  discount?: number | null;
+  //@ApiProperty()
+  //@Column("double precision", { name: "globaldiscount", nullable: true, default: 0 })
+ // discount?: number | null;
 
   @ApiProperty()
   @Column("boolean", { name: "isdeleted", nullable: true, default: false })
@@ -39,17 +39,17 @@ export class Pizza {
   @Column("timestamp with time zone", { name: "createdat", nullable: true })
   createdAt?: Date | null;
 
-  @ApiProperty()
-  @Column("integer", { name: "createdby", nullable: true })
-  createdBy?: number | null;
+  //@ApiProperty()
+  //@Column("integer", { name: "createdby", nullable: true })
+  //createdBy?: number | null;
 
   @ApiProperty()
   @Column("timestamp with time zone", { name: "updatedat", nullable: true })
   updatedAt?: Date | null;
 
-  @ApiProperty()
-  @Column("integer", { name: "updatedby", nullable: true })
-  updatedBy?: number | null;
+ // @ApiProperty()
+ // @Column("integer", { name: "updatedby", nullable: true })
+ // updatedBy?: number | null;
 
   @ApiProperty({ type: () => Size })
   @ManyToOne(() => Size, { eager: true }) // Use eager loading if necessary

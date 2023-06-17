@@ -12,8 +12,9 @@ export class SchnitzelController {
     return this.schnitzelService.create(createSchnitzelDto);
   }
 
-  @Get()
+  @Get('getschnitzelList')
   findAll() {
+    console.log('cx',this.schnitzelService.findAll())
     return this.schnitzelService.findAll();
   }
 

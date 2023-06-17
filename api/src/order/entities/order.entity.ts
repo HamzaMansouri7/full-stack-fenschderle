@@ -68,7 +68,7 @@ export class Order {
 
 
   @ApiProperty({ type: () => [Snack] })
-  @OneToMany(() => Snack, pasta => pasta.order)
+  @OneToMany(() => Snack, snack => snack.order)
   snacks: Snack[];
 
 

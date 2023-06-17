@@ -37,7 +37,7 @@ async create(CreateSchnitzelDto: any) {
 }
 
 async findAll() {
-  return await this.SchnitzelRepository.find() ;;
+  return await this.SchnitzelRepository.find();
 }
 
 // async findOne(id: number) {

@@ -37,7 +37,10 @@ export class SnacksService {
   }
   
   async findOne(id: any): Promise<Snack> {
-    const Snack = await this.snacksRepository.findOne(id);
+    const Snack = await this.snacksRepository.find(
+          {
+         where: { id: id }
+    });
     if (!Snack) {
       throw new NotFoundException(`Snack #${id} not found`);
     }
