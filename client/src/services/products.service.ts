@@ -28,6 +28,6 @@ export class ProductService {
   }
   
   getsnacksList(): Observable<any[]> {
-    return this.http.get<any[]>(`${environment.backend_root}/snacks/ getsnacksList`);
+    return this.http.get<any[]>(`${environment.backend_root}/snacks/getsnacksList`);
   }
 }

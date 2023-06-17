@@ -70,6 +70,7 @@ export class MenuComponent implements OnInit {
 
 
   getschnitzelList(){
+    console.log('schnitzel list')
     this.productsService.getschnitzelList().pipe(
       tap(list=>{
         console.log('schnitzel list',list)
@@ -81,7 +82,7 @@ export class MenuComponent implements OnInit {
   getsnacksList(){
     this.productsService.getsnacksList().pipe(
       tap(list=>{
-        console.log('schnitzel list',list)
+        console.log('snacks list',list)
         this.SnacksArray= list})
     ).subscribe();
   }
