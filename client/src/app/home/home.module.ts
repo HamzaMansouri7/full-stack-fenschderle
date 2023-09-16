@@ -20,7 +20,7 @@ import { BookTableModule } from '../book-table/book-table.module';
     HomeRoutingModule,
     TranslateModule.forChild(),
     MenuModule,
-    GalleryModule,
+    // GalleryModule,
     ContactModule,
     EventsModule,
     BookTableModule

@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'book-table',
     loadChildren: () => import('./book-table/book-table.module').then(m => m.BookTableModule)
   },
-  {
-    path: 'gallery',
-    loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule)
-  },
+  // {
+  //   path: 'gallery',
+  //   loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule)
+  // },
   {
     path: 'events',
     loadChildren: () => import('./events/events.module').then(m => m.EventsModule)

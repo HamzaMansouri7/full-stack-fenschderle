@@ -15,10 +15,10 @@
     {id:2209, name:'Parmesan-schnitzel', pictures:'assets/img/menu/schnitzel/schnitzel-31.webp', price:10.50,price2: 14.00, description:'mit Rigatoni Mafiosi oder Pasta und Sauce nach Wahl',quantity:0,categoryId:'good'},
   ]
   const SnacksArray = [
-  {id:2210,name:'Pommes', pictures:'assets/img/menu/schnaks/pommes771.webp', price:4.00 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
-  {id:2211,name:'Country Potatoes', pictures:'assets/img/menu/schnaks/download2221.webp', price:4.50 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
-  {id:2212,name:'Currywurst mit Pommesoes', pictures:'assets/img/menu/schnaks/pngwing.com1.webp', price:7.50 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
-  {id:2213,name:'Wurstsalat', pictures:'assets/img/menu/schnaks/wurslata.webp', price:6.50, price2:8.50 , description:'gerne mit Käse und Zwiebeln',quantity:0,categoryId:'good'},
+  {id:2210,name:'Pommes', pictures:'https://res.cloudinary.com/dojaplymd/image/upload/v1685213878/download222_ruqyev.png', price:4.00 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
+  {id:2211,name:'Country Potatoes', pictures:'', price:4.50 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
+  {id:2212,name:'Currywurst mit Pommesoes', pictures:'https://res.cloudinary.com/dojaplymd/image/upload/v1685213882/pngwing.com_xiqwn6.png', price:7.50 , description:'mit Ketchup und Mayonnaise',quantity:0,categoryId:'good'},
+  {id:2213,name:'Wurstsalat', pictures:'', price:6.50 , description:'gerne mit Käse und Zwiebeln',quantity:0,categoryId:'good'},
   ]
 
   const pizzaArray = [
@@ -38,6 +38,7 @@
     {id:2227,name:'Tonno e Cipolla' , pictures:'assets/img/menu/pizza/pizza-tonno1.webp', price: 13 , description:'Thunfisch,rote Zwiebeln,Mozzarella,käse',quantity:0,categoryId:'good'},
     {id:2228,name:'Speciale' , pictures:'assets/img/menu/pizza/pizza-special1.webp', price: 13 , description:'schinken,Salami,Champignon,rote.Zwiebeln,Paprika,Mozzarella,käse',quantity:0,categoryId:'good'},
   ]
+
   const  salatArray = [
     {id:2229,name:'beilagen',pictures:'assets/img/menu/salat/beilagen1.webp', price: 9,description:'kleiner Insalata Mista', },
     {id:2230,name:'Insalata Caprese',pictures:'assets/img/menu/salat/insalat-caprese1.webp',price: 10, description:'Tomate, Mozzarella,Ruccola'},
