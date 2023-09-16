@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Pizza } from "src/pizza/entities/pizza.entity";
+import { Schnitzel } from "src/schnitzel/entities/schnitzel.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Size {
@@ -41,7 +42,11 @@ export class Size {
     updatedBy: number | null;
     
     @ApiProperty({ type: () => Pizza, isArray: true })
-    @OneToMany(() => Pizza, pizza => pizza.sizeId)
+    @OneToMany(() => Pizza, pizza => pizza.sizeid)
     pizzas: Pizza[];
+
+    @ApiProperty({ type: () => Schnitzel, isArray: true })
+    @OneToMany(() => Schnitzel, pizza => pizza.sizeid)
+    schnitzels: Schnitzel[];
     
 }

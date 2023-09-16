@@ -12,7 +12,8 @@ export class SalatController {
     return this.salatService.create(createSalatDto);
   }
 
-  @Get()
+  // getsalatList  getsnacksList fi wast snack ?N??? 
+  @Get('/getsalatList')  
   findAll() {
     return this.salatService.findAll();
   }

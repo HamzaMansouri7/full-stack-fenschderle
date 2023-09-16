@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger/dist/decorators";
+import { Order } from "src/order/entities/order.entity";
 
 
 export class CreatePastaDto {
@@ -13,21 +14,26 @@ export class CreatePastaDto {
    price?: number;
 
   @ApiProperty()
-   discount?: number;
+   pictureUrl?: string;
+
+  //@ApiProperty()
+  // discount?: number;
 
    @ApiProperty()
-   isDeleted?: number;
+   isdeleted?: number;
 
    @ApiProperty()
-   createdAt?: number;
+   createdat?: number;
+
+   //@ApiProperty()
+   //createdBy?: number;
 
    @ApiProperty()
-   createdBy?: number;
+   updatedat?: number;
 
-   @ApiProperty()
-   updatedAt?: number;
-
-   @ApiProperty()
-   updatedBy?: number;
-
+  // @ApiProperty()
+  // updatedBy?: number;
+ 
+  @ApiProperty()
+  order?: Order;
 }

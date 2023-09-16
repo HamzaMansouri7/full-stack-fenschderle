@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Order } from 'src/order/entities/order.entity';
 
 export class UpdatePastaDto  {
     @ApiProperty()
@@ -8,17 +9,29 @@ export class UpdatePastaDto  {
     description?: string;
  
    @ApiProperty()
-    price?: number;
+   price?: number;
  
    @ApiProperty()
-    discount?: number;
+    pictureUrl?: string;
+ 
+   //@ApiProperty()
+   // discount?: number;
+ 
+    @ApiProperty() 
+    isdeleted?: number;
  
     @ApiProperty()
-    isDeleted?: number;
-
+    createdat?: number;
+ 
+    //@ApiProperty()
+    //createdBy?: number;
+ 
     @ApiProperty()
-    updatedAt: Date | null;
+    updatedat?: number;
+ 
+   // @ApiProperty()
+   // updatedBy?: number;
   
-    @ApiProperty()
-    updatedBy: number | null;
+   @ApiProperty()
+   order?: Order;
 }

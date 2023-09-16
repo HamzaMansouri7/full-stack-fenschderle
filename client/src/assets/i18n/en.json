@@ -137,25 +137,30 @@
                 "title":"Grand Total"
                },
             
-    "rounded-0 border-0":{
+    "model-templte":{
                 "modal-title":"Your Shopping Cart",
                 "table-product":"Product",
                 "table-Price":"Price",
                 "table-Quantity":"Quantity",
                 "table-Total":"Total",
                 "table-Actions":"Actions",
-                "btn bg-orange-back":"Back to Menu",
-                "btn_add_to_cart":"Add to cart"
+                "btn-bg-orange-back":"Back to Menu",
+                "btn-bg-orange-add":"Add to cart"
               },
-    "oder-component":{
-                "title":"Continue shopping",
-                "title1":"Shopping cart",
-                "title2":"you have",
-                "title3":"items in your cart",
+    "order-component":{
+                "title":"Back to Home",
+                "title1":"Total Products",
+                "title2":"Order Summary",
+                "title3":"Selected Products",
                 "price":"price",
+                "quantity":"Quantity",
                 "sort":"Sort by",
-                "Paiement":"payment",
-                "accept":"We accept"
+                "Paiement":"Payment Details",
+                "accept":"We accept the following payment methods:",
+                "cartname":"Cardholder's Name",
+                "Subtotal":"Subtotal"
+                
 
+                
              }
 }
