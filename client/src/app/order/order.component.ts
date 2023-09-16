@@ -104,4 +104,12 @@ export class OrderComponent implements OnInit {
       this.calculateTotalCardPrice();
     }
   }
+
+  sortby(type:string){
+    // console.log('type:',type);
+    // if ( type = price  )
+    // // sort products by  preice DESC or ASC 
+    // if ( type = qutnityu  )
+    // // sort products by  qutnityu DESC or ASC 
+  }
 }

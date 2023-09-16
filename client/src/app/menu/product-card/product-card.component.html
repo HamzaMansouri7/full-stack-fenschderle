@@ -7,8 +7,8 @@
 <div class="card h-100 cursor-pointer m-6">
     <div class="menu-item">
         <div class="toHover">
-            <a [href]='product.pictures' >
-                <img class="pic-card" src="https://res.cloudinary.com/dz5mp3a6n/image/upload/v1685148935/menu-item-3_smfe5f.png"  alt="">
+            <a [href]='product.pictureurl' >
+                <img class="pic-card" src="{{product.pictureurl}}"  alt="" width="50" height="auto">
             </a>
         </div>
     </div>
@@ -23,17 +23,17 @@
             <p class="price"> {{product.price | currency:'EUR':'symbol':'1.2-2'}} </p>
         </div>
     </div>
-    <div class="card-footer bg-card-footer bg-orange d-flex align-items-baseline justify-content-center">
+    <div class="card-footer bg-card-footer bg-orange d-flex align-items-baseline justify-content-center"
+            (click)="fullSceenAction(cartModal,product)">
         <span class="fa-solid fa-cart-shopping size-icon pr-2" ></span>
         <h4 class="purchase-title pt-1">{{'cart.title' | translate}}</h4>
     </div>
 </div>
 
-<ng-template #cartModal let-modal class="rounded-0 border-0">
+<ng-template #cartModal let-modal class="model-templte">
     <div class="modal-header border-bottom-0">
         <h5 class="modal-title" id="exampleModalLabel">
-            <!--Your Shopping Cart-->
-            {{'rounded-0 border-0.modal-title' | translate}}
+            {{'model-templte.modal-title' | translate}}
         </h5>
         <button type="button" class="bg-orange" 
                  aria-label="Close">
@@ -45,11 +45,11 @@
             <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col" class="table-product"> {{'rounded-0 border-0.table-product' | translate}}</th>
-                <th scope="col"  class="table-Price"> {{'rounded-0 border-0.table-Price' | translate}}</th>
-                <th scope="col-4"class="table-Quantity"> {{'rounded-0 border-0.table-Quantity' | translate}}</th>
-                <th scope="col"class="table-Total"> {{'rounded-0 border-0.table-Total' | translate}}</th>
-                <th scope="col"class="table-Actions"> {{'rounded-0 border-0.table-Actions' | translate}}</th>
+                <th scope="col" class="table-product"> {{'model-templte.table-product' | translate}}</th>
+                <th scope="col"  class="table-Price"> {{'model-templte.table-Price' | translate}}</th>
+                <th scope="col-4"class="table-Quantity"> {{'model-templte.table-Quantity' | translate}}</th>
+                <th scope="col"class="table-Total"> {{'model-templte.table-Total' | translate}}</th>
+                <th scope="col"class="table-Actions"> {{'model-templte.table-Actions' | translate}}</th>
             </tr>
             </thead>
             <tbody>
@@ -57,8 +57,8 @@
                 <td class="w-25">
                     <div class="menu-item">
                         <div class="toHover">
-                            <a [href]='product.pictures' class="glightbox">
-                                <img src="{{product.pictures}}" class="menu-img img-fluid" alt="">
+                            <a [href]='product.pictureurl' class="glightbox">
+                                <img src="{{product.pictureurl}}" class="menu-img img-fluid" alt="">
                             </a>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                 <td>
                     <div class="d-flex align-items-end" >
                         <button class="btn btn-link px-2"
-                        (click)="increaseValue()">
+                        (click)=" decreaseValue()">
                         <i class="fas fa-minus"></i>
                         </button>
                         <input type="text" class="form-control  text-center" [(ngModel)]="inputedQuantity" id="input1" value="2">
@@ -92,11 +92,7 @@
         </div>
     </div>
     <div class="modal-footer border-top-0 d-flex justify-content-between">
-        <button type="button" class="btn bg-orange " (click)="modal.dismiss('Cross click')" [routerLink]="'/menu'">{{'rounded-0 border-0.btn bg-orang'| translate}}</button>
-        <button type="button" class="btn bg-orange " (click)="modal.dismiss('Cross click');
-            sendToCart(product)"
-            [routerLink]="'/order'">
-            {{'rounded-0 border-0.btn bg-orange-add'| translate}}
-        </button>
+        <button type="button" class="btn bg-orange" (click)="modal.dismiss('Cross click')" [routerLink]="'/menu'">{{'model-templte.btn-bg-orange-back'| translate}}</button>
+        <button type="button" class="btn bg-orange " (click)="modal.dismiss('Cross click'); sendToCart(product)" [routerLink]="'/order'">{{'model-templte.btn-bg-orange-add'| translate}}</button>
     </div>
 </ng-template>

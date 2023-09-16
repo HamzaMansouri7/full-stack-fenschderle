@@ -26,13 +26,13 @@ export class ProductCardComponent  {
   }
   fullSceenAction(cartModal: any,product:Product) {
     this.modalService.open(cartModal, { size: 'lg',centered: true});
-    // this.getOldData()
+    this.getOldData();
     this.verifOldQuantity(product);
     // this.inputedQuantity=1
   }
 
   verifOldQuantity(product:any) {
-    if (this.productArray.length>0) {
+    if (this.productArray?.length>0) {
       this.productArray.forEach((element:any) => {
           if(element.id==product.id){
             this.oldQte=element.quantity

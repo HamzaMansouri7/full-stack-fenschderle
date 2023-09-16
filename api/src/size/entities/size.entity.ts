@@ -42,7 +42,7 @@ export class Size {
     updatedBy: number | null;
     
     @ApiProperty({ type: () => Pizza, isArray: true })
-    @OneToMany(() => Pizza, pizza => pizza.sizeId)
+    @OneToMany(() => Pizza, pizza => pizza.sizeid)
     pizzas: Pizza[];
 
     @ApiProperty({ type: () => Schnitzel, isArray: true })

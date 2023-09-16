@@ -12,7 +12,7 @@ export class SnacksController {
     return this.snacksService.create(createSnackDto);
   }
 
-  @Get('getsnacksList')
+  @Get('/getsnacksList')
   findAll() {
     return this.snacksService.findAll();
   }

@@ -6,26 +6,37 @@
           <div class="row">
             <div class="col-lg-8">
               <h5 class="mb-3">
-                <a routerLink="/home" class="text-body">
-                  <i class="fas fa-long-arrow-alt-left me-2 title"></i>
-                  Back to Home
+                <a routerLink="/home" class="text-body btn bg-orange">
+                  <i class="fas fa-long-arrow-alt-left me-2  title"></i>
+                  {{'order-component.title' | translate}}
                 </a>
               </h5>
               <hr>
               <div class="d-flex justify-content-between align-items-center mb-4">
                 <div *ngIf="products.length">
-                  <p class="mb-1 title1">Selected Products</p>
-                  <p class="mb-0 title2">Total Products: {{products.length}}</p>
-                  <p class="title3">Order Summary</p>
+                  <p class="mb-1 title1">{{'order-component.title3' | translate}}</p>
+                  <p class="mb-0 title2">{{'order-component.title1' | translate}} {{products.length}}</p>
+                  <p class="title3">{{'order-component.title2' | translate}}</p>
                 </div>
-                <div>
-                  <p class="mb-0">
-                    <span class="text-muted sort">Sort By:</span>
-                    <a href="#!" class="text-body price">Price
+                <!-- <div>
+                    <span class="text-muted sort">{{'order-component.sort' | translate}}:</span>
+                    <a href="#!" class="text-body price">{{'order-component.price' | translate}}
                       <i class="fas fa-angle-down mt-1"></i>
                     </a>
-                  </p>
+                </div> -->
+                <div class="d-flex">
+                  <span class="text-muted sort">{{'order-component.sort' | translate}}:</span>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <!-- <i class="fas fa-angle-down mt-1"></i> -->
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                      <li><a class="dropdown-item" (click)="sortby('Price')">{{'order-component.price' | translate}}</a></li>
+                      <li><a class="dropdown-item" (click)="sortby('Quantity')">{{'order-component.quantity' | translate}}</a></li>
+                    </ul>
+                  </div>
                 </div>
+                
               </div>
               <div class="card mb-3" *ngFor="let item of products">
                 <div class="card-body">
@@ -61,12 +72,12 @@
               <div class="card bg-paiement text-white rounded-3">
                 <div class="card-body" *ngIf="products.length">
                   <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h5 class="mb-0 Paiement">Payment Details</h5>
+                    <h5 class="mb-0 Paiement"> {{'order-component.Paiement' | translate}}</h5>
                     <span id="boot-icon" class="bi bi-cart-check-fill bg-orange">
                       <p class="badge bg-orange">{{products.length}}</p>
                     </span>
                   </div>
-                  <p class="small mb-2 accept">We accept the following payment methods:</p>
+                  <p class="small mb-2 accept">{{'order-component.accept' | translate}}:</p>
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-mastercard fa-2x me-2"></i></a>
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-visa fa-2x me-2"></i></a>
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-amex fa-2x me-2"></i></a>
@@ -75,7 +86,7 @@
                     <div class="form-outline form-white mb-4">
                       <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                              placeholder="Cardholder's Name"   name="cardholderName" [(ngModel)]="cardholderName" />
-                      <label class="form-label" for="typeName">Cardholder's Name</label>
+                      <label class="form-label" for="typeName">{{'order-component.cartname' | translate}}</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
@@ -90,7 +101,7 @@
                           <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YYYY"
                                  size="7" id="exp" minlength="7" maxlength="7" name="cardExpiration"
                                  [(ngModel)]="cardExpiration" />
-                          <label class="form-label" for="typeExp">Expiration Date</label>
+                          <label class="form-label" for="typeExp">{{'order-component.dateshop' | translate}}</label>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -109,7 +120,7 @@
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between">
-                    <p class="mb-2">Subtotal</p>
+                    <p class="mb-2">{{'order-component.Subtotal' | translate}}</p>
                     <p class="mb-2">{{totalCardPrice}} €</p>
                   </div>
 
@@ -124,7 +135,7 @@
                   </div>
 
                   <div class="text-center">
-                    <button class="btn btn-light btn-lg"
+                    <button class="btn btn-light btn-lg btn bg-orange"
                     (click)="openConfirmationModal(confirmModal)">Order Now</button>
                   </div>
                 </div>

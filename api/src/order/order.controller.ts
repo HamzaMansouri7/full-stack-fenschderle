@@ -46,21 +46,21 @@ export class OrderController {
           // Pizza details for the first pizza
           id: 1,
           name: "Margherita",
-          sizeId: null,
+          sizeid: null,
           price: 799,
         },
         {
           // Pizza details for the second pizza
           id: 2,
           name: "Pepperoni",
-          sizeId: null,
+          sizeid: null,
           price: 999,
         },
         {
           // Pizza details for the third pizza
           id: 3,
           name: "Vegetarian",
-          sizeId: null,
+          sizeid: null,
           price: 699,
         },
       ],
@@ -82,7 +82,7 @@ export class OrderController {
     };
     
       
-    // return this.orderService.passNewOrder(body);
+    return this.orderService.passNewOrder(body);
   }
 
 
