@@ -24,7 +24,7 @@ import { ConfigModule } from '@nestjs/config';
         port: 5432,
         username:'postgres',
         password: 'postgres',
-        database: 'hamza',
+        database: 'fensh',
         autoLoadEntities: true,
         synchronize: true,
       }),
