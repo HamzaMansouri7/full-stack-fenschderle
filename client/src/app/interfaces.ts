@@ -7,7 +7,7 @@ export class Product {
     public reference?:string,
     public price?: number,
     public categoryId?: number & Category,
-    public pictures?:[] | string,
+    public pictureurl?:[] | string,
     public quantity?:number,
     public totProdPrice?:number
     
@@ -29,6 +29,7 @@ export class Order {
     public paymentState?: string // State of the payment (e.g., pending, completed, failed)
   ) {}
 }
+
 
 
 export class Menu {

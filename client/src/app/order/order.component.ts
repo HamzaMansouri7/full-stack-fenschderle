@@ -15,6 +15,7 @@ export class OrderComponent implements OnInit {
   public products: Product[];
   totalCardPrice: any;
   cardholderName: string = '';
+  receiptEmail: string ;
   cardNumber: number;
   cardExpiration:any;
   cardCvv: number;
@@ -25,6 +26,7 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.sharedService.getAllCookies();
+    console.log('producyts', this.products)
     this.calculateTotalCardPrice();
   }
   
@@ -69,6 +71,7 @@ export class OrderComponent implements OnInit {
   addOrderAndPaiement() {
     const order :Order= {
       customerName: this.cardholderName, // Cardholder's name from the input field
+      receiptEmail: this.receiptEmail ,//e,ail
       products: this.products, // Array of selected products
       totalAmount: this.totalCardPrice, // Total price of the order
       cardNumber: this.cardNumber, // Card number from the input field

@@ -17,6 +17,8 @@ export class ProductCardComponent  {
   inputedQuantity: number = 1;
   oldQte:number;
   price:number;
+  totalCardPrice: any;
+  products: any;
   constructor(private modalService: NgbModal,
               private cartService:CartService,
               private sharedService:SharedService){}
@@ -51,12 +53,16 @@ export class ProductCardComponent  {
   }
 
   increaseValue() {
-    this.inputedQuantity = this.inputedQuantity + 1
+    this.inputedQuantity = this.inputedQuantity + 1;
+    
   }
   decreaseValue() {
     if (this.inputedQuantity > 0) {
-      this.inputedQuantity = this.inputedQuantity - 1
+      this.inputedQuantity = this.inputedQuantity - 1;
+      
     }
+   
+    
 
   }
   getOldData(){
@@ -67,7 +73,7 @@ export class ProductCardComponent  {
   }
 
   calculprice(){
-    this.price= this.product.price * this.inputedQuantity 
+    this.price= this.product.price * this.inputedQuantity ;
   }
 
   
