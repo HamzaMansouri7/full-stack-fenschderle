@@ -13,6 +13,9 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 registerLocaleData(localeFr);
 import localeFr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
@@ -29,6 +32,7 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         TranslateModule,
         FormsModule,
+        ReactiveFormsModule,
         NgxsModule.forRoot([UIState], { developmentMode: !environment.production }),
         TranslateModule.forRoot({
             loader: {

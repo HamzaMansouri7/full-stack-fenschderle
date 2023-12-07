@@ -82,17 +82,46 @@
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-visa fa-2x me-2"></i></a>
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-amex fa-2x me-2"></i></a>
                   <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                  <form class="mt-4">
+                  <form [formGroup]="orderForm" class="mt-4">
                     <div class="form-outline form-white mb-4">
                       <input type="text" id="typeName" class="form-control form-control-lg" size="17"
-                             placeholder="Cardholder's Name"   name="cardholderName" [(ngModel)]="cardholderName" />
-                      <label class="form-label" for="typeName">{{'order-component.cartname' | translate}}</label>
+                             placeholder="Name" formControlName="cardholderName" />
+                      <label class="form-label" for="typeName">{{ 'order-component.cartname' | translate }}</label>
                     </div>
-                    
-                    
+            
                     <div class="mb-3">
+                      <input type="email" class="form-control form-control-lg" size="17" id="exampleInputEmail1"
+                             placeholder="E-mail" formControlName="receiptEmail" />
+                      <label for="exampleInputEmail1" class="form-label">{{ 'order-component.emailAddress' | translate }}</label>
+                    </div>
+            
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="typeText" class="form-control form-control-lg" size="17"
+                             placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" formControlName="cardNumber" />
+                      <label class="form-label" for="typeText">{{ 'order-component.cardNumber' | translate }}</label>
+                    </div>
+            
+                    <div class="form-outline form-white mb-4">
+                      <div class="form-outline form-white">
+                        <input type="month" id="typeExp" class="form-control form-control-lg" placeholder="MM"
+                               formControlName="cardExpiration" />
+                        <label class="form-label" for="typeExp">{{ 'order-component.dateshop' | translate }}</label>
+                      </div>
+                    </div>
+            
+                    <div class="mb-4">
+                      <div class="form-outline form-white">
+                        <input type="password" id="typeCvc" class="form-control form-control-lg" size="4"
+                               placeholder="CVC" minlength="3" maxlength="3" formControlName="cardCvv" />
+                        <label class="form-label" for="typeCvc">{{ 'order-component.CVC' | translate }}</label>
+                      </div>
+                    </div>
+                 
+            
+            
+                   <!-- <div class="mb-3">
                      
-                      <input type="email" class="form-control form-control-lg"  size="17" id="exampleInputEmail1" placeholder="Cardholder's E-mail" name="cardholderName" [(ngModel)]="receiptEmail" required>
+                      <input type="email" class="form-control form-control-lg"  size="17" id="exampleInputEmail1" placeholder=" E-mail" name="cardholderEmail" [(ngModel)]="receiptEmail" required>
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       
                     </div>
@@ -103,16 +132,18 @@
                       <label class="form-label" for="typeText">Card Number</label>
                     </div>
 
-                    <div class="row mb-4">
-                      <div class="col-md-6">
+                    
+                      <div class="form-outline form-white mb-4">
                         <div class="form-outline form-white">
-                          <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YYYY"
-                                 size="7" id="exp" minlength="7" maxlength="7" name="cardExpiration"
+                          <input type="month" id="typeExp" class="form-control form-control-lg" placeholder="MM"
+                                  name="cardExpiration"
                                  [(ngModel)]="cardExpiration" />
                           <label class="form-label" for="typeExp">{{'order-component.dateshop' | translate}}</label>
                         </div>
+                      
+                        
                       </div>
-                      <div class="col-md-6">
+                      <div class="mb-4">
                         <div class="form-outline form-white">
                           <input type="password"
                                  id="typeCvc" class="form-control form-control-lg" size="4"
@@ -120,8 +151,7 @@
                                  [(ngModel)]="cardCvv" />
                           <label class="form-label" for="typeCvc">CVC</label>
                         </div>
-                      </div>
-                    </div>
+                      </div>-->
 
                   </form>
 
@@ -142,10 +172,16 @@
                     <p class="mb-2">{{totalCardPrice}} €</p>
                   </div>
 
-                  <div class="text-center">
+                 <!-- <div class="text-center">
                     <button class="btn btn-light btn-lg btn bg-orange"
                     (click)="openConfirmationModal(confirmModal)">Order Now</button>
-                  </div>
+                      <button class="btn btn-light btn-lg btn bg-orange" [disabled]="!orderForm.valid"
+                  (click)="openConfirmationModal(confirmModal)">Order Now</button>
+                  </div> -->
+                  <button class="btn btn-light btn-lg btn bg-orange" [disabled]="orderForm.invalid"
+                  (click)="openConfirmationModal(confirmModal)">Order Now</button>
+                
+          
                 </div>
                 <div class="card-body" *ngIf="!products.length">
                   <div class="d-flex justify-content-center align-items-center h-100">

@@ -48,8 +48,8 @@
                 <th scope="col" class="table-product"> {{'model-templte.table-product' | translate}}</th>
                 <th scope="col"  class="table-Price"> {{'model-templte.table-Price' | translate}}</th>
                 <th scope="col-4"class="table-Quantity"> {{'model-templte.table-Quantity' | translate}}</th>
-                <th scope="col"class="table-Total"> {{'model-templte.table-Total' | translate}}</th>
-                <th scope="col"class="table-Actions"> {{'model-templte.table-Actions' | translate}}</th>
+               <!-- <th scope="col"class="table-Total"> {{'model-templte.table-Total' | translate}}</th>
+                <th scope="col"class="table-Actions"> {{'model-templte.table-Actions' | translate}}</th>-->
             </tr>
             </thead>
             <tbody>
@@ -78,17 +78,17 @@
                         </button>
                     </div>
 
-                <td>{{product.totalCardPrice |currency:'EUR':true}}</td>
+                <!--<td>{{product.totalCardPrice |currency:'EUR':true}}</td>
                 <td>
                 <a href="#" class="">
                     <i class="fas fa-trash"></i>
-                </a>
+                </a>-->
                 </td>
             </tr>
             </tbody>
         </table> 
         <div class="d-flex justify-content-end">
-            <p class="price grey-txt">Total <span class="price grey-txt">{{product.price |currency:'EUR':true}} </span></p>
+            <p class="price grey-txt">Total <span class="price grey-txt">{{product.totalCardPrice|currency:'EUR':true}} </span></p>
         </div>
     </div>
     <div class="modal-footer border-top-0 d-flex justify-content-between">

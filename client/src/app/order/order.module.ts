@@ -6,18 +6,22 @@ import { TranslateModule } from '@ngx-translate/core';
 import { OrderComponent } from './order.component';
 import { MenuModule } from '../menu/menu.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
-    OrderComponent
+    OrderComponent,
+   
   ],
   imports: [
     CommonModule,
     OrderRoutingModule ,
     TranslateModule,
     MenuModule,
-    FormsModule
+    FormsModule ,
+    ReactiveFormsModule,
   ]
 })
 export class OrderModule { }

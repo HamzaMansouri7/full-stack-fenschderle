@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from 'src/services/cart.service';
 import { OrderService } from 'src/services/order.service';
 import { SharedService } from 'src/services/shared.service';
 import { Order, Product } from '../interfaces';
+
+
 
 @Component({
   selector: 'app-order',
@@ -17,17 +20,31 @@ export class OrderComponent implements OnInit {
   cardholderName: string = '';
   receiptEmail: string ;
   cardNumber: number;
-  cardExpiration:any;
+  cardExpiration:Date;
+  cardExpiration2:number;
   cardCvv: number;
+  formattedDate: Date;
+  cardExpiration3:Date;
+  orderForm: FormGroup;
+  
 
   constructor(private cartService: CartService, private sharedService: SharedService,
     private modalService: NgbModal,
-    private orderService: OrderService) { }
+    private orderService: OrderService ,
+    private fb: FormBuilder,
+    ) { }
 
   ngOnInit(): void {
     this.products = this.sharedService.getAllCookies();
     console.log('producyts', this.products)
     this.calculateTotalCardPrice();
+    this.orderForm = this.fb.group({
+      cardholderName: ['', Validators.required],
+      receiptEmail: ['', [Validators.required, Validators.email]],
+      cardNumber: ['', [Validators.required, Validators.minLength(19), Validators.maxLength(19)]],
+      cardExpiration: ['', Validators.required],
+      cardCvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
+    });
   }
   
   removeItem(item: any) {
@@ -69,18 +86,28 @@ export class OrderComponent implements OnInit {
   }
 
   addOrderAndPaiement() {
+    console.log('montXXXXX',typeof this.cardExpiration);
+    //const month = new Date(this.cardExpiration).getMonth() + 1; 
+    //const year = new Date(this.cardExpiration2).getFullYear(); 
+    //const formattedDate = year + '-' + (month < 10 ? '0' : '') + month;
+    //console.log('month' , month);
+   // console.log('year' , year);
+    
     const order :Order= {
       customerName: this.cardholderName, // Cardholder's name from the input field
-      receiptEmail: this.receiptEmail ,//e,ail
+      customerEmail: this.receiptEmail ,//e,ail
       products: this.products, // Array of selected products
       totalAmount: this.totalCardPrice, // Total price of the order
       cardNumber: this.cardNumber, // Card number from the input field
-      cardExpiration: this.cardExpiration, // Card expiration date from the input field
+      cardExpiration3: this.formattedDate, // Card expiration date from the input field
       cardCvv: this.cardCvv // Card CVV from the input field
     };
+   
     this.orderService.addOrder(order).subscribe(
       (response) => {
         // Handle the success response
+        //this.toastr.success('Success message', 'Success');
+       // this.toastr.success("Order added successfully.")
         console.log('Order added successfully:', response);
         // Proceed with the payment
       },
@@ -115,4 +142,11 @@ export class OrderComponent implements OnInit {
     // if ( type = qutnityu  )
     // // sort products by  qutnityu DESC or ASC 
   }
+ 
 }
+//function showToaster() {
+ // throw new Error('Function not implemented.');
+//}
+
+
+

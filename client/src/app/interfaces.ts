@@ -22,15 +22,13 @@ export class Order {
     public customerName?: string, // Name of the customer
     public shippingAddress?: string,
     public paymentMethod?: string,
-    public cardExpiration?: number, // Expiration month of the payment card (numeric)
+    public cardExpiration3?: Date, // Expiration month of the payment card (numeric)
     public cardNumber?: number,
     public cardCvv?: number,
-    public receiptEmail?: string, // Email address to receive the payment receipt
+    public customerEmail?: string, // Email address to receive the payment receipt
     public paymentState?: string // State of the payment (e.g., pending, completed, failed)
   ) {}
 }
-
-
 
 export class Menu {
   constructor(

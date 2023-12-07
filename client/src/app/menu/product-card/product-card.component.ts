@@ -51,15 +51,18 @@ export class ProductCardComponent  {
     this.itemNumber = this.sharedService.cartItemNumber(this.productArray) || 0;
     // this.router.navigate['/order'];
   }
-
+ 
   increaseValue() {
     this.inputedQuantity = this.inputedQuantity + 1;
-    
+       //UPDATE TOTALE PRICVE 
+       this.product.totalCardPrice =this.product.price * this.inputedQuantity
   }
-  decreaseValue() {
+
+decreaseValue() {
     if (this.inputedQuantity > 0) {
-      this.inputedQuantity = this.inputedQuantity - 1;
-      
+    this.inputedQuantity = this.inputedQuantity - 1;
+      // UPDATE TOTALE PRICVE 
+      this.product.totalCardPrice =this.product.price * this.inputedQuantity
     }
    
     
@@ -87,3 +90,5 @@ export class ProductCardComponent  {
   
 
 }
+ 
+
