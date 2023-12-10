@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service: 'outlook',
+  service: 'outlook ',
   auth: {
     user: 'brahim.houssemeddine@outlook.fr', // your email
     pass: 'Agence2018' // your password
